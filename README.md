@@ -1,4 +1,4 @@
-# generator-cw-sp [![NPM version][npm-image]][npm-url] [![Coverage Status](https://coveralls.io/repos/yeoman/generator-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/yeoman/generator-generator?branch=master)
+# generator-cw-sp [![NPM version][npm-image]][npm-url] [![Coverage Status](https://coveralls.io/repos/github/creawavestudio/generator-cw-sp/badge.svg?branch=master)](https://coveralls.io/github/creawavestudio/generator-cw-sp?branch=master)
 > 
 
 ## Installation
