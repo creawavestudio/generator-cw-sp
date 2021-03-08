@@ -9,7 +9,4 @@ node_js:
   - v6
   - v4
   
-script: "sbt clean coverage test"
-
-after_success: "sbt coveralls"
 after_script: cat ./coverage/lcov.info | coveralls
