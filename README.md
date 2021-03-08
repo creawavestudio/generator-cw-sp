@@ -1,4 +1,4 @@
-# generator-cw-sp [![NPM version][npm-image]][npm-url]
+# generator-cw-sp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > 
 
 ## Installation
@@ -25,8 +25,14 @@ yo cw-sp
 
 ## License
 
-MIT © [Denis](https://github.com/Defus-E/)
+MIT © [Defus-E](https://github.com/Defus-E)
 
 
 [npm-image]: https://badge.fury.io/js/generator-cw-sp.svg
 [npm-url]: https://npmjs.org/package/generator-cw-sp
+[travis-image]: https://travis-ci.com/Creawave Studio/generator-cw-sp.svg?branch=master
+[travis-url]: https://travis-ci.com/Creawave Studio/generator-cw-sp
+[daviddm-image]: https://david-dm.org/Creawave Studio/generator-cw-sp.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Creawave Studio/generator-cw-sp
+[coveralls-image]: https://coveralls.io/repos/Creawave Studio/generator-cw-sp/badge.svg
+[coveralls-url]: https://coveralls.io/r/Creawave Studio/generator-cw-sp

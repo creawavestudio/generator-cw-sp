@@ -18,7 +18,7 @@ class CreaWSP extends Generator {
 
   async prompting() {
     // Have Yeoman greet the user.
-    this.log(yosay(`Welcome to the world-class ${chalk.yellow("Creawave Studio`s")} generator!`));
+    this.log(yosay("Welcome to the world-class ${chalk.yellow(\"Creawave Studio`s\")} generator!"));
     this.log(chalk.green(" Initializing package.json file."));
 
     // Ask for some questions
@@ -141,7 +141,7 @@ class CreaWSP extends Generator {
     ];
 
     this.proc = await this.prompt(_processors);
-    this.package.devDependencies[`gulp-sass`] = "^4.1.0";
+    this.package.devDependencies["gulp-sass"] = "^4.1.0";
 
     if (this.proc.html !== "html") this.package.devDependencies[`gulp-${this.proc.html}`] = "^4.0.1";
     if (this.proc.js === "js") {
@@ -166,7 +166,7 @@ class CreaWSP extends Generator {
     // Paths for gulp`s tasks
     const tasks = [
       `\"./gulp/tasks/code/${this.choice.js}\"`, `\"./gulp/tasks/code/${this.choice.html}\"`,
-      `\"./gulp/tasks/code/sass\"`, "\"./gulp/tasks/other/acss\"",
+      "\"./gulp/tasks/code/sass\"", "\"./gulp/tasks/other/acss\"",
       "\"./gulp/tasks/other/critical\"", "\"./gulp/tasks/images/img\"",
       "\"./gulp/tasks/server/serve\"", "\"./gulp/tasks/server/compile\"",
       "\"./gulp/tasks/server/watch\"", "\"./gulp/tasks/images/misc\"",
@@ -218,12 +218,12 @@ class CreaWSP extends Generator {
     this.fs.copy(this.templatePath("gulp/tasks/other/sprite.js"), this.destinationPath("gulp/tasks/other/sprite.js"));
     this.fs.copy(this.templatePath("gulp/tasks/other/critical.js"), this.destinationPath("gulp/tasks/other/critical.js"));
 
-    this.fs.copy(this.templatePath("gulp/tasks/code/css.js"), this.destinationPath(`gulp/tasks/code/sass.js`));
+    this.fs.copy(this.templatePath("gulp/tasks/code/css.js"), this.destinationPath("gulp/tasks/code/sass.js"));
     this.fs.copy(this.templatePath("gulp/tasks/code/html.js"), this.destinationPath(`gulp/tasks/code/${this.choice.html}.js`));
     this.fs.copy(this.templatePath("gulp/tasks/code/js.js"), this.destinationPath(`gulp/tasks/code/${this.choice.js}.js`));
 
     // Copying to /src/
-    this.fs.copy(this.templatePath(`src/sass/**/*.{scss, sass}`), this.destinationPath(`src/sass/`));
+    this.fs.copy(this.templatePath("src/sass/**/*.{scss, sass}"), this.destinationPath("src/sass/"));
     this.fs.copy(this.templatePath("src/templates/*.mustache"), this.destinationPath("src/templates/"));
     this.fs.copy(this.templatePath("src/i/sprites/_sprite_template.scss"), this.destinationPath("src/i/sprites/_sprite_template.scss"));
     this.fs.copy(this.templatePath(`src/${this.choice.html}/**/*.${this.choice.html}`), this.destinationPath(`src/${this.choice.html}/`));

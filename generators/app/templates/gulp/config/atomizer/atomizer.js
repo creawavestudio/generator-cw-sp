@@ -412,8 +412,8 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
     warnings.forEach(function (className) {
       console.warn([
         "Warning: Class `" + className + "` is ambiguous, and must be manually added to your config file:",
-        '"custom": {',
-        '    "' + className + '": <YOUR-CUSTOM-VALUE>',
+        "\"custom\": {",
+        "    \"" + className + "\": <YOUR-CUSTOM-VALUE>",
         "}"
       ].join("\n"));
     });
