@@ -5,26 +5,36 @@ const EXConfig = require("../../config/extractMediaQuery");
 
 module.exports = () => {
   $.gulp.task("build:css", () => {
-    return $.gulp.src([$.config.paths.styles.src, $.config.paths.styles.ignore])
-      .pipe($.plumberNotifier({
-        errorHandler: function (error) {
-          console.log(error.message);
-          this.emit("end");
-        }
-      }))
+    return $.gulp
+      .src([$.config.paths.styles.src, $.config.paths.styles.ignore])
+      .pipe(
+        $.plumberNotifier({
+          errorHandler: function (error) {
+            console.log(error.message);
+            this.emit("end");
+          }
+        })
+      )
       .pipe($.sourcemaps.init())
       .pipe($.cached(proc.css))
       .pipe($.dependents())
       .pipe($.gp.css({ importer: $.magicImporter() }))
       .pipe($.postcss(processors))
-      .pipe($.cssnano({
-        autoprefixer: { browsers: ["last 15 versions", "> 1%", "ie 8", "ie 7"], add: true, cascade: false, grid: true },
-        discardOverridden: { removeAll: false },
-        // cssDeclarationSorter: { order: "smacss" },
-        discardComments: false,
-        cssDeclarationSorter: false,
-        mergeIdents: true
-      }))
+      .pipe(
+        $.cssnano({
+          autoprefixer: {
+            browsers: ["last 15 versions", "> 1%", "ie 8", "ie 7"],
+            add: true,
+            cascade: false,
+            grid: true
+          },
+          discardOverridden: { removeAll: false },
+          // CssDeclarationSorter: { order: "smacss" },
+          discardComments: false,
+          cssDeclarationSorter: false,
+          mergeIdents: true
+        })
+      )
       .pipe($.csso({ restructure: true, sourceMap: true, debug: false }))
       .pipe($.gcmq())
       .pipe($.postcss([extractmediaquery(EXConfig)]))

@@ -183,10 +183,12 @@ module.exports = [
     styles: {
       appearance: "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "none"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -232,7 +234,7 @@ module.exports = [
       "border-bottom": "$0"
     }
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Border top",
@@ -243,7 +245,7 @@ module.exports = [
       "border-top": "$0"
     }
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Border end",
@@ -254,7 +256,7 @@ module.exports = [
       "border-__END__": "$0"
     }
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Border bottom",
@@ -265,7 +267,7 @@ module.exports = [
       "border-bottom": "$0"
     }
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Border start",
@@ -293,7 +295,7 @@ module.exports = [
     },
     arguments: [colors]
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Border top color",
@@ -304,7 +306,7 @@ module.exports = [
     },
     arguments: [colors]
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Border end color",
@@ -315,7 +317,7 @@ module.exports = [
     },
     arguments: [colors]
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Border bottom color",
@@ -326,7 +328,7 @@ module.exports = [
     },
     arguments: [colors]
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Border start color",
@@ -350,9 +352,11 @@ module.exports = [
     styles: {
       "border-spacing": "$0 $1"
     },
-    arguments: [{
-      i: "inherit"
-    }]
+    arguments: [
+      {
+        i: "inherit"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -369,20 +373,22 @@ module.exports = [
     styles: {
       "border-style": "$0"
     },
-    arguments: [{
-      d: "dotted",
-      da: "dashed",
-      do: "double",
-      g: "groove",
-      h: "hidden",
-      i: "inset",
-      n: "none",
-      o: "outset",
-      r: "ridge",
-      s: "solid"
-    }]
+    arguments: [
+      {
+        d: "dotted",
+        da: "dashed",
+        do: "double",
+        g: "groove",
+        h: "hidden",
+        i: "inset",
+        n: "none",
+        o: "outset",
+        r: "ridge",
+        s: "solid"
+      }
+    ]
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Border top style",
@@ -391,20 +397,22 @@ module.exports = [
     styles: {
       "border-top-style": "$0"
     },
-    arguments: [{
-      d: "dotted",
-      da: "dashed",
-      do: "double",
-      g: "groove",
-      h: "hidden",
-      i: "inset",
-      n: "none",
-      o: "outset",
-      r: "ridge",
-      s: "solid"
-    }]
+    arguments: [
+      {
+        d: "dotted",
+        da: "dashed",
+        do: "double",
+        g: "groove",
+        h: "hidden",
+        i: "inset",
+        n: "none",
+        o: "outset",
+        r: "ridge",
+        s: "solid"
+      }
+    ]
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Border end style",
@@ -413,20 +421,22 @@ module.exports = [
     styles: {
       "border-__END__-style": "$0"
     },
-    arguments: [{
-      d: "dotted",
-      da: "dashed",
-      do: "double",
-      g: "groove",
-      h: "hidden",
-      i: "inset",
-      n: "none",
-      o: "outset",
-      r: "ridge",
-      s: "solid"
-    }]
+    arguments: [
+      {
+        d: "dotted",
+        da: "dashed",
+        do: "double",
+        g: "groove",
+        h: "hidden",
+        i: "inset",
+        n: "none",
+        o: "outset",
+        r: "ridge",
+        s: "solid"
+      }
+    ]
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Border bottom style",
@@ -435,20 +445,22 @@ module.exports = [
     styles: {
       "border-bottom-style": "$0"
     },
-    arguments: [{
-      d: "dotted",
-      da: "dashed",
-      do: "double",
-      g: "groove",
-      h: "hidden",
-      i: "inset",
-      n: "none",
-      o: "outset",
-      r: "ridge",
-      s: "solid"
-    }]
+    arguments: [
+      {
+        d: "dotted",
+        da: "dashed",
+        do: "double",
+        g: "groove",
+        h: "hidden",
+        i: "inset",
+        n: "none",
+        o: "outset",
+        r: "ridge",
+        s: "solid"
+      }
+    ]
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Border start style",
@@ -457,18 +469,20 @@ module.exports = [
     styles: {
       "border-__START__-style": "$0"
     },
-    arguments: [{
-      d: "dotted",
-      da: "dashed",
-      do: "double",
-      g: "groove",
-      h: "hidden",
-      i: "inset",
-      n: "none",
-      o: "outset",
-      r: "ridge",
-      s: "solid"
-    }]
+    arguments: [
+      {
+        d: "dotted",
+        da: "dashed",
+        do: "double",
+        g: "groove",
+        h: "hidden",
+        i: "inset",
+        n: "none",
+        o: "outset",
+        r: "ridge",
+        s: "solid"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -485,13 +499,15 @@ module.exports = [
     styles: {
       "border-width": "$0"
     },
-    arguments: [{
-      m: "medium",
-      t: "thin",
-      th: "thick"
-    }]
+    arguments: [
+      {
+        m: "medium",
+        t: "thin",
+        th: "thick"
+      }
+    ]
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Border top width",
@@ -500,13 +516,15 @@ module.exports = [
     styles: {
       "border-top-width": "$0"
     },
-    arguments: [{
-      m: "medium",
-      t: "thin",
-      th: "thick"
-    }]
+    arguments: [
+      {
+        m: "medium",
+        t: "thin",
+        th: "thick"
+      }
+    ]
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Border end width",
@@ -515,13 +533,15 @@ module.exports = [
     styles: {
       "border-__END__-width": "$0"
     },
-    arguments: [{
-      m: "medium",
-      t: "thin",
-      th: "thick"
-    }]
+    arguments: [
+      {
+        m: "medium",
+        t: "thin",
+        th: "thick"
+      }
+    ]
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Border bottom width",
@@ -530,13 +550,15 @@ module.exports = [
     styles: {
       "border-bottom-width": "$0"
     },
-    arguments: [{
-      m: "medium",
-      t: "thin",
-      th: "thick"
-    }]
+    arguments: [
+      {
+        m: "medium",
+        t: "thin",
+        th: "thick"
+      }
+    ]
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Border start width",
@@ -545,11 +567,13 @@ module.exports = [
     styles: {
       "border-__START__-width": "$0"
     },
-    arguments: [{
-      m: "medium",
-      t: "thin",
-      th: "thick"
-    }]
+    arguments: [
+      {
+        m: "medium",
+        t: "thin",
+        th: "thick"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -567,7 +591,7 @@ module.exports = [
       "border-radius": "$0"
     }
   },
-  // top-right
+  // Top-right
   {
     type: "pattern",
     name: "Border radius top right",
@@ -577,7 +601,7 @@ module.exports = [
       "border-top-__END__-radius": "$0"
     }
   },
-  // bottom-right
+  // Bottom-right
   {
     type: "pattern",
     name: "Border radius bottom right",
@@ -587,7 +611,7 @@ module.exports = [
       "border-bottom-__END__-radius": "$0"
     }
   },
-  // bottom-left
+  // Bottom-left
   {
     type: "pattern",
     name: "Border radius bottom left",
@@ -597,7 +621,7 @@ module.exports = [
       "border-bottom-__START__-radius": "$0"
     }
   },
-  // top-left
+  // Top-left
   {
     type: "pattern",
     name: "Border radius top left",
@@ -622,12 +646,14 @@ module.exports = [
     styles: {
       background: "$0"
     },
-    arguments: [{
-      n: "none",
-      t: "transparent"
-    }]
+    arguments: [
+      {
+        n: "none",
+        t: "transparent"
+      }
+    ]
   },
-  // background-image
+  // Background-image
   {
     type: "pattern",
     name: "Background image",
@@ -636,11 +662,13 @@ module.exports = [
     styles: {
       "background-image": "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
-  // background-color
+  // Background-color
   {
     type: "pattern",
     name: "Background color",
@@ -651,7 +679,7 @@ module.exports = [
     },
     arguments: [colors]
   },
-  // background-clip
+  // Background-clip
   {
     type: "pattern",
     name: "Background clip",
@@ -660,13 +688,15 @@ module.exports = [
     styles: {
       "background-clip": "$0"
     },
-    arguments: [{
-      bb: "border-box",
-      cb: "content-box",
-      pb: "padding-box"
-    }]
+    arguments: [
+      {
+        bb: "border-box",
+        cb: "content-box",
+        pb: "padding-box"
+      }
+    ]
   },
-  // background-origin
+  // Background-origin
   {
     type: "pattern",
     name: "Background origin",
@@ -675,13 +705,15 @@ module.exports = [
     styles: {
       "background-origin": "$0"
     },
-    arguments: [{
-      bb: "border-box",
-      cb: "content-box",
-      pb: "padding-box"
-    }]
+    arguments: [
+      {
+        bb: "border-box",
+        cb: "content-box",
+        pb: "padding-box"
+      }
+    ]
   },
-  // background-size
+  // Background-size
   {
     type: "pattern",
     name: "Background size",
@@ -690,13 +722,15 @@ module.exports = [
     styles: {
       "background-size": "$0"
     },
-    arguments: [{
-      a: "auto",
-      ct: "contain",
-      cv: "cover"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        ct: "contain",
+        cv: "cover"
+      }
+    ]
   },
-  // background-attachment
+  // Background-attachment
   {
     type: "pattern",
     name: "Background attachment",
@@ -705,13 +739,15 @@ module.exports = [
     styles: {
       "background-attachment": "$0"
     },
-    arguments: [{
-      f: "fixed",
-      l: "local",
-      s: "scroll"
-    }]
+    arguments: [
+      {
+        f: "fixed",
+        l: "local",
+        s: "scroll"
+      }
+    ]
   },
-  // background-position
+  // Background-position
   {
     type: "pattern",
     name: "Background position",
@@ -720,19 +756,21 @@ module.exports = [
     styles: {
       "background-position": "$0 $1"
     },
-    arguments: [{
-      start_t: "__START__ 0",
-      end_t: "__END__ 0",
-      start_b: "__START__ 100%",
-      end_b: "__END__ 100%",
-      start_c: "__START__ center",
-      end_c: "__END__ center",
-      c_b: "center 100%",
-      c_t: "center 0",
-      c: "center"
-    }]
+    arguments: [
+      {
+        start_t: "__START__ 0",
+        end_t: "__END__ 0",
+        start_b: "__START__ 100%",
+        end_b: "__END__ 100%",
+        start_c: "__START__ center",
+        end_c: "__END__ center",
+        c_b: "center 100%",
+        c_t: "center 0",
+        c: "center"
+      }
+    ]
   },
-  // background-position-x
+  // Background-position-x
   {
     type: "pattern",
     name: "Background position (X axis)",
@@ -741,13 +779,15 @@ module.exports = [
     styles: {
       "background-position-x": "$0"
     },
-    arguments: [{
-      start: "__START__",
-      end: "__END__",
-      c: "50%"
-    }]
+    arguments: [
+      {
+        start: "__START__",
+        end: "__END__",
+        c: "50%"
+      }
+    ]
   },
-  // background-position-y
+  // Background-position-y
   {
     type: "pattern",
     name: "Background position (Y axis)",
@@ -756,13 +796,15 @@ module.exports = [
     styles: {
       "background-position-y": "$0"
     },
-    arguments: [{
-      t: "0",
-      b: "100%",
-      c: "50%"
-    }]
+    arguments: [
+      {
+        t: "0",
+        b: "100%",
+        c: "50%"
+      }
+    ]
   },
-  // background-repeat
+  // Background-repeat
   {
     type: "pattern",
     name: "Background repeat",
@@ -771,14 +813,16 @@ module.exports = [
     styles: {
       "background-repeat": "$0"
     },
-    arguments: [{
-      nr: "no-repeat",
-      rx: "repeat-x",
-      ry: "repeat-y",
-      r: "repeat",
-      s: "space",
-      ro: "round"
-    }]
+    arguments: [
+      {
+        nr: "no-repeat",
+        rx: "repeat-x",
+        ry: "repeat-y",
+        r: "repeat",
+        s: "space",
+        ro: "round"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -793,10 +837,12 @@ module.exports = [
     styles: {
       "border-collapse": "$0"
     },
-    arguments: [{
-      c: "collapse",
-      s: "separate"
-    }]
+    arguments: [
+      {
+        c: "collapse",
+        s: "separate"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -811,11 +857,13 @@ module.exports = [
     styles: {
       "box-sizing": "$0"
     },
-    arguments: [{
-      cb: "content-box",
-      pb: "padding-box",
-      bb: "border-box"
-    }]
+    arguments: [
+      {
+        cb: "content-box",
+        pb: "padding-box",
+        bb: "border-box"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -830,9 +878,11 @@ module.exports = [
     styles: {
       "box-shadow": "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -847,12 +897,14 @@ module.exports = [
     styles: {
       clear: "$0"
     },
-    arguments: [{
-      n: "none",
-      b: "both",
-      start: "__START__",
-      end: "__END__"
-    }]
+    arguments: [
+      {
+        n: "none",
+        b: "both",
+        start: "__START__",
+        end: "__END__"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -882,15 +934,17 @@ module.exports = [
     styles: {
       contain: "$0"
     },
-    arguments: [{
-      n: "none",
-      st: "strict",
-      c: "content",
-      z: "size",
-      l: "layout",
-      s: "style",
-      p: "paint"
-    }]
+    arguments: [
+      {
+        n: "none",
+        st: "strict",
+        c: "content",
+        z: "size",
+        l: "layout",
+        s: "style",
+        p: "paint"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -905,14 +959,16 @@ module.exports = [
     styles: {
       content: "$0"
     },
-    arguments: [{
-      n: "none",
-      nor: "normal",
-      oq: "open-quote",
-      cq: "close-quote",
-      noq: "no-open-quote",
-      ncq: "no-close-quote"
-    }]
+    arguments: [
+      {
+        n: "none",
+        nor: "normal",
+        oq: "open-quote",
+        cq: "close-quote",
+        noq: "no-open-quote",
+        ncq: "no-close-quote"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -927,42 +983,44 @@ module.exports = [
     styles: {
       cursor: "$0"
     },
-    arguments: [{
-      a: "auto",
-      as: "all-scroll",
-      c: "cell",
-      cr: "col-resize",
-      co: "copy",
-      cro: "crosshair",
-      d: "default",
-      er: "e-resize",
-      ewr: "ew-resize",
-      g: "grab",
-      gr: "grabbing",
-      h: "help",
-      m: "move",
-      n: "none",
-      nd: "no-drop",
-      na: "not-allowed",
-      nr: "n-resize",
-      ner: "ne-resize",
-      neswr: "nesw-resize",
-      nwser: "nwse-resize",
-      nsr: "ns-resize",
-      nwr: "nw-resize",
-      p: "pointer",
-      pr: "progress",
-      rr: "row-resize",
-      sr: "s-resize",
-      ser: "se-resize",
-      swr: "sw-resize",
-      t: "text",
-      vt: "vertical-text",
-      w: "wait",
-      wr: "w-resize",
-      zi: "zoom-in",
-      zo: "zoom-out"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        as: "all-scroll",
+        c: "cell",
+        cr: "col-resize",
+        co: "copy",
+        cro: "crosshair",
+        d: "default",
+        er: "e-resize",
+        ewr: "ew-resize",
+        g: "grab",
+        gr: "grabbing",
+        h: "help",
+        m: "move",
+        n: "none",
+        nd: "no-drop",
+        na: "not-allowed",
+        nr: "n-resize",
+        ner: "ne-resize",
+        neswr: "nesw-resize",
+        nwser: "nwse-resize",
+        nsr: "ns-resize",
+        nwr: "nw-resize",
+        p: "pointer",
+        pr: "progress",
+        rr: "row-resize",
+        sr: "s-resize",
+        ser: "se-resize",
+        swr: "sw-resize",
+        t: "text",
+        vt: "vertical-text",
+        w: "wait",
+        wr: "w-resize",
+        zi: "zoom-in",
+        zo: "zoom-out"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -977,26 +1035,28 @@ module.exports = [
     styles: {
       display: "$0"
     },
-    arguments: [{
-      n: "none",
-      b: "block",
-      f: "flex",
-      if: "inline-flex",
-      i: "inline",
-      ib: "inline-block",
-      tb: "table",
-      tbr: "table-row",
-      tbc: "table-cell",
-      li: "list-item",
-      ri: "run-in",
-      cp: "compact",
-      itb: "inline-table",
-      tbcl: "table-column",
-      tbclg: "table-column-group",
-      tbhg: "table-header-group",
-      tbfg: "table-footer-group",
-      tbrg: "table-row-group"
-    }]
+    arguments: [
+      {
+        n: "none",
+        b: "block",
+        f: "flex",
+        if: "inline-flex",
+        i: "inline",
+        ib: "inline-block",
+        tb: "table",
+        tbr: "table-row",
+        tbc: "table-cell",
+        li: "list-item",
+        ri: "run-in",
+        cp: "compact",
+        itb: "inline-table",
+        tbcl: "table-column",
+        tbclg: "table-column-group",
+        tbhg: "table-header-group",
+        tbfg: "table-footer-group",
+        tbrg: "table-row-group"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1013,11 +1073,13 @@ module.exports = [
     styles: {
       filter: "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
-  // blur
+  // Blur
   {
     type: "pattern",
     name: "Blur (filter)",
@@ -1027,7 +1089,7 @@ module.exports = [
       filter: "blur($0)"
     }
   },
-  // brightness
+  // Brightness
   {
     type: "pattern",
     name: "Brightness (filter)",
@@ -1037,7 +1099,7 @@ module.exports = [
       filter: "brightness($0)"
     }
   },
-  // contrast
+  // Contrast
   {
     type: "pattern",
     name: "Contrast (filter)",
@@ -1047,7 +1109,7 @@ module.exports = [
       filter: "contrast($0)"
     }
   },
-  // contrast (only custom)
+  // Contrast (only custom)
   {
     type: "pattern",
     name: "Drop shadow (filter)",
@@ -1057,7 +1119,7 @@ module.exports = [
       filter: "drop-shadow($0)"
     }
   },
-  // grayscale
+  // Grayscale
   {
     type: "pattern",
     name: "Grayscale (filter)",
@@ -1067,7 +1129,7 @@ module.exports = [
       filter: "grayscale($0)"
     }
   },
-  // hue-rotate
+  // Hue-rotate
   {
     type: "pattern",
     name: "Hue Rotate (filter)",
@@ -1077,7 +1139,7 @@ module.exports = [
       filter: "hue-rotate($0)"
     }
   },
-  // invert
+  // Invert
   {
     type: "pattern",
     name: "Invert (filter)",
@@ -1087,7 +1149,7 @@ module.exports = [
       filter: "invert($0)"
     }
   },
-  // opacity
+  // Opacity
   {
     type: "pattern",
     name: "Opacity (filter)",
@@ -1097,7 +1159,7 @@ module.exports = [
       filter: "opacity($0)"
     }
   },
-  // saturate
+  // Saturate
   {
     type: "pattern",
     name: "Saturate (filter)",
@@ -1107,7 +1169,7 @@ module.exports = [
       filter: "saturate($0)"
     }
   },
-  // sepia
+  // Sepia
   {
     type: "pattern",
     name: "Sepia (filter)",
@@ -1132,10 +1194,12 @@ module.exports = [
     styles: {
       flex: "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "none"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "none"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -1146,12 +1210,14 @@ module.exports = [
     styles: {
       flex: "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "none"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "none"
+      }
+    ]
   },
-  // flex-grow
+  // Flex-grow
   {
     type: "pattern",
     name: "Flex grow (deprecated)",
@@ -1170,7 +1236,7 @@ module.exports = [
       "flex-grow": "$0"
     }
   },
-  // flex-shrink
+  // Flex-shrink
   {
     type: "pattern",
     name: "Flex shrink (deprecated)",
@@ -1189,7 +1255,7 @@ module.exports = [
       "flex-shrink": "$0"
     }
   },
-  // flex-basis
+  // Flex-basis
   {
     type: "pattern",
     name: "Flex basis (deprecated)",
@@ -1198,10 +1264,12 @@ module.exports = [
     styles: {
       "flex-basis": "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "none"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "none"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -1211,12 +1279,14 @@ module.exports = [
     styles: {
       "flex-basis": "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "none"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "none"
+      }
+    ]
   },
-  // align-self (previously flex-align)
+  // Align-self (previously flex-align)
   // Previous version: http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-align
   // Latest version: http://www.w3.org/TR/css3-flexbox/#align-items-property
   {
@@ -1227,16 +1297,18 @@ module.exports = [
     styles: {
       "align-self": "$0"
     },
-    arguments: [{
-      a: "auto",
-      fs: "flex-start",
-      fe: "flex-end",
-      c: "center",
-      b: "baseline",
-      st: "stretch"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        fs: "flex-start",
+        fe: "flex-end",
+        c: "center",
+        b: "baseline",
+        st: "stretch"
+      }
+    ]
   },
-  // flex-direction
+  // Flex-direction
   {
     type: "pattern",
     name: "Flex direction (deprecated)",
@@ -1245,12 +1317,14 @@ module.exports = [
     styles: {
       "flex-direction": "$0"
     },
-    arguments: [{
-      r: "row",
-      rr: "row-reverse",
-      c: "column",
-      cr: "column-reverse"
-    }]
+    arguments: [
+      {
+        r: "row",
+        rr: "row-reverse",
+        c: "column",
+        cr: "column-reverse"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -1260,14 +1334,16 @@ module.exports = [
     styles: {
       "flex-direction": "$0"
     },
-    arguments: [{
-      r: "row",
-      rr: "row-reverse",
-      c: "column",
-      cr: "column-reverse"
-    }]
+    arguments: [
+      {
+        r: "row",
+        rr: "row-reverse",
+        c: "column",
+        cr: "column-reverse"
+      }
+    ]
   },
-  // flex-flow
+  // Flex-flow
   {
     type: "pattern",
     name: "Flex flow (deprecated)",
@@ -1277,15 +1353,17 @@ module.exports = [
     styles: {
       "flex-flow": "$0"
     },
-    arguments: [{
-      r: "row",
-      rr: "row-reverse",
-      c: "column",
-      cr: "column-reverse",
-      nw: "nowrap",
-      w: "wrap",
-      wr: "wrap-reverse"
-    }]
+    arguments: [
+      {
+        r: "row",
+        rr: "row-reverse",
+        c: "column",
+        cr: "column-reverse",
+        nw: "nowrap",
+        w: "wrap",
+        wr: "wrap-reverse"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -1295,17 +1373,19 @@ module.exports = [
     styles: {
       "flex-flow": "$0"
     },
-    arguments: [{
-      r: "row",
-      rr: "row-reverse",
-      c: "column",
-      cr: "column-reverse",
-      nw: "nowrap",
-      w: "wrap",
-      wr: "wrap-reverse"
-    }]
+    arguments: [
+      {
+        r: "row",
+        rr: "row-reverse",
+        c: "column",
+        cr: "column-reverse",
+        nw: "nowrap",
+        w: "wrap",
+        wr: "wrap-reverse"
+      }
+    ]
   },
-  // align-items (previously flex-item-align)
+  // Align-items (previously flex-item-align)
   // Previous version: http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-align
   // Latest version: http://www.w3.org/TR/css3-flexbox/#align-items-property
   {
@@ -1316,15 +1396,17 @@ module.exports = [
     styles: {
       "align-items": "$0"
     },
-    arguments: [{
-      fs: "flex-start",
-      fe: "flex-end",
-      c: "center",
-      b: "baseline",
-      st: "stretch"
-    }]
+    arguments: [
+      {
+        fs: "flex-start",
+        fe: "flex-end",
+        c: "center",
+        b: "baseline",
+        st: "stretch"
+      }
+    ]
   },
-  // align-content (previously flex-line-pack)
+  // Align-content (previously flex-line-pack)
   // Source: http://msdn.microsoft.com/en-us/library/ie/jj127302%28v=vs.85%29.aspx
   // Previous version: http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-line-pack
   // Latest version: http://www.w3.org/TR/css3-flexbox/#align-content-property
@@ -1336,16 +1418,18 @@ module.exports = [
     styles: {
       "align-content": "$0"
     },
-    arguments: [{
-      fs: "flex-start",
-      fe: "flex-end",
-      c: "center",
-      sb: "space-between",
-      sa: "space-around",
-      st: "stretch"
-    }]
+    arguments: [
+      {
+        fs: "flex-start",
+        fe: "flex-end",
+        c: "center",
+        sb: "space-between",
+        sa: "space-around",
+        st: "stretch"
+      }
+    ]
   },
-  // order (previously flex-order)
+  // Order (previously flex-order)
   // Previous version: http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-order
   // Latest version: http://www.w3.org/TR/css3-flexbox/#order-property
   {
@@ -1357,7 +1441,7 @@ module.exports = [
       order: "$0"
     }
   },
-  // justify-content (previously flex-pack)
+  // Justify-content (previously flex-pack)
   // Previous version: http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-pack
   // Latest version: http://www.w3.org/TR/css3-flexbox/#justify-content-property
   {
@@ -1368,20 +1452,22 @@ module.exports = [
     styles: {
       "justify-content": "$0"
     },
-    arguments: [{
-      /* Positional alignment */
-      fs: "flex-start",
-      fe: "flex-end",
-      c: "center",
+    arguments: [
+      {
+        /* Positional alignment */
+        fs: "flex-start",
+        fe: "flex-end",
+        c: "center",
 
-      /* Distributed alignment */
-      sb: "space-between",
-      sa: "space-around",
-      se: "space-evenly",
-      s: "stretch"
-    }]
+        /* Distributed alignment */
+        sb: "space-between",
+        sa: "space-around",
+        se: "space-evenly",
+        s: "stretch"
+      }
+    ]
   },
-  // flex-wrap
+  // Flex-wrap
   {
     type: "pattern",
     name: "Flex-wrap (deprecated)",
@@ -1390,11 +1476,13 @@ module.exports = [
     styles: {
       "flex-wrap": "$0"
     },
-    arguments: [{
-      nw: "nowrap",
-      w: "wrap",
-      wr: "wrap-reverse"
-    }]
+    arguments: [
+      {
+        nw: "nowrap",
+        w: "wrap",
+        wr: "wrap-reverse"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -1404,11 +1492,13 @@ module.exports = [
     styles: {
       "flex-wrap": "$0"
     },
-    arguments: [{
-      nw: "nowrap",
-      w: "wrap",
-      wr: "wrap-reverse"
-    }]
+    arguments: [
+      {
+        nw: "nowrap",
+        w: "wrap",
+        wr: "wrap-reverse"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1423,11 +1513,13 @@ module.exports = [
     styles: {
       float: "$0"
     },
-    arguments: [{
-      n: "none",
-      start: "__START__",
-      end: "__END__"
-    }]
+    arguments: [
+      {
+        n: "none",
+        start: "__START__",
+        end: "__END__"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1442,13 +1534,15 @@ module.exports = [
     styles: {
       "font-family": "$0"
     },
-    arguments: [{
-      c: "\"Monotype Corsiva\", \"Comic Sans MS\", cursive",
-      f: "Capitals, Impact, fantasy",
-      m: "Monaco, \"Courier New\", monospace",
-      s: "Georgia, \"Times New Roman\", serif",
-      ss: "Helvetica, Arial, sans-serif"
-    }]
+    arguments: [
+      {
+        c: '"Monotype Corsiva", "Comic Sans MS", cursive',
+        f: "Capitals, Impact, fantasy",
+        m: 'Monaco, "Courier New", monospace',
+        s: 'Georgia, "Times New Roman", serif',
+        ss: "Helvetica, Arial, sans-serif"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1463,21 +1557,23 @@ module.exports = [
     styles: {
       "font-weight": "$0"
     },
-    arguments: [{
-      100: "100",
-      200: "200",
-      300: "300",
-      400: "400",
-      500: "500",
-      600: "600",
-      700: "700",
-      800: "800",
-      900: "900",
-      b: "bold",
-      br: "bolder",
-      lr: "lighter",
-      n: "normal"
-    }]
+    arguments: [
+      {
+        100: "100",
+        200: "200",
+        300: "300",
+        400: "400",
+        500: "500",
+        600: "600",
+        700: "700",
+        800: "800",
+        900: "900",
+        b: "bold",
+        br: "bolder",
+        lr: "lighter",
+        n: "normal"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1506,11 +1602,13 @@ module.exports = [
     styles: {
       "font-style": "$0"
     },
-    arguments: [{
-      n: "normal",
-      i: "italic",
-      o: "oblique"
-    }]
+    arguments: [
+      {
+        n: "normal",
+        i: "italic",
+        o: "oblique"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1528,10 +1626,12 @@ module.exports = [
     styles: {
       "font-variant": "$0"
     },
-    arguments: [{
-      n: "normal",
-      sc: "small-caps"
-    }]
+    arguments: [
+      {
+        n: "normal",
+        sc: "small-caps"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1546,16 +1646,18 @@ module.exports = [
     styles: {
       height: "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto",
-      av: "available",
-      bb: "border-box",
-      cb: "content-box",
-      fc: "fit-content",
-      maxc: "max-content",
-      minc: "min-content"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto",
+        av: "available",
+        bb: "border-box",
+        cb: "content-box",
+        fc: "fit-content",
+        maxc: "max-content",
+        minc: "min-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1570,11 +1672,13 @@ module.exports = [
     styles: {
       hyphens: "$0"
     },
-    arguments: [{
-      a: "auto",
-      n: "normal",
-      m: "manual"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        n: "normal",
+        m: "manual"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1589,9 +1693,11 @@ module.exports = [
     styles: {
       "letter-spacing": "$0"
     },
-    arguments: [{
-      n: "normal"
-    }]
+    arguments: [
+      {
+        n: "normal"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1606,23 +1712,25 @@ module.exports = [
     styles: {
       "list-style-type": "$0"
     },
-    arguments: [{
-      n: "none",
-      d: "disc",
-      c: "circle",
-      s: "square",
-      dc: "decimal",
-      dclz: "decimal-leading-zero",
-      lr: "lower-roman",
-      lg: "lower-greek",
-      ll: "lower-latin",
-      ur: "upper-roman",
-      ul: "upper-latin",
-      a: "armenian",
-      g: "georgian",
-      la: "lower-alpha",
-      ua: "upper-alpha"
-    }]
+    arguments: [
+      {
+        n: "none",
+        d: "disc",
+        c: "circle",
+        s: "square",
+        dc: "decimal",
+        dclz: "decimal-leading-zero",
+        lr: "lower-roman",
+        lg: "lower-greek",
+        ll: "lower-latin",
+        ur: "upper-roman",
+        ul: "upper-latin",
+        a: "armenian",
+        g: "georgian",
+        la: "lower-alpha",
+        ua: "upper-alpha"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1637,10 +1745,12 @@ module.exports = [
     styles: {
       "list-style-position": "$0"
     },
-    arguments: [{
-      i: "inside",
-      o: "outside"
-    }]
+    arguments: [
+      {
+        i: "inside",
+        o: "outside"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1655,9 +1765,11 @@ module.exports = [
     styles: {
       "list-style-image": "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1672,9 +1784,11 @@ module.exports = [
     styles: {
       "line-height": "$0"
     },
-    arguments: [{
-      n: "normal"
-    }]
+    arguments: [
+      {
+        n: "normal"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1691,10 +1805,12 @@ module.exports = [
     styles: {
       margin: "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
   // X axis
   {
@@ -1706,10 +1822,12 @@ module.exports = [
       "margin-__START__": "$0",
       "margin-__END__": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
   // Y axis
   {
@@ -1721,12 +1839,14 @@ module.exports = [
       "margin-top": "$0",
       "margin-bottom": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Margin top",
@@ -1735,12 +1855,14 @@ module.exports = [
     styles: {
       "margin-top": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Margin end",
@@ -1749,12 +1871,14 @@ module.exports = [
     styles: {
       "margin-__END__": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Margin bottom",
@@ -1763,12 +1887,14 @@ module.exports = [
     styles: {
       "margin-bottom": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Margin start",
@@ -1777,10 +1903,12 @@ module.exports = [
     styles: {
       "margin-__START__": "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1795,13 +1923,15 @@ module.exports = [
     styles: {
       "max-height": "$0"
     },
-    arguments: [{
-      a: "auto",
-      maxc: "max-content",
-      minc: "min-content",
-      fa: "fill-available",
-      fc: "fit-content"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        maxc: "max-content",
+        minc: "min-content",
+        fa: "fill-available",
+        fc: "fit-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1816,13 +1946,15 @@ module.exports = [
     styles: {
       "max-width": "$0"
     },
-    arguments: [{
-      n: "none",
-      fa: "fill-available",
-      fc: "fit-content",
-      maxc: "max-content",
-      minc: "min-content"
-    }]
+    arguments: [
+      {
+        n: "none",
+        fa: "fill-available",
+        fc: "fit-content",
+        maxc: "max-content",
+        minc: "min-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1837,13 +1969,15 @@ module.exports = [
     styles: {
       "min-height": "$0"
     },
-    arguments: [{
-      a: "auto",
-      fa: "fill-available",
-      fc: "fit-content",
-      maxc: "max-content",
-      minc: "min-content"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        fa: "fill-available",
+        fc: "fit-content",
+        maxc: "max-content",
+        minc: "min-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1858,14 +1992,16 @@ module.exports = [
     styles: {
       "min-width": "$0"
     },
-    arguments: [{
-      a: "auto",
-      fa: "fill-available",
-      fc: "fit-content",
-      ini: "initial",
-      maxc: "max-content",
-      minc: "min-content"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        fa: "fill-available",
+        fc: "fit-content",
+        ini: "initial",
+        maxc: "max-content",
+        minc: "min-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1880,13 +2016,15 @@ module.exports = [
     styles: {
       "object-fit": "$0"
     },
-    arguments: [{
-      ct: "contain",
-      cv: "cover",
-      f: "fill",
-      n: "none",
-      sd: "scale-down"
-    }]
+    arguments: [
+      {
+        ct: "contain",
+        cv: "cover",
+        f: "fill",
+        n: "none",
+        sd: "scale-down"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1902,10 +2040,12 @@ module.exports = [
     styles: {
       outline: "$0"
     },
-    arguments: [{
-      0: "0",
-      n: "none"
-    }]
+    arguments: [
+      {
+        0: "0",
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1921,11 +2061,13 @@ module.exports = [
     styles: {
       top: "$0"
     },
-    arguments: [{
-      a: "auto"
-    }]
+    arguments: [
+      {
+        a: "auto"
+      }
+    ]
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "End",
@@ -1934,11 +2076,13 @@ module.exports = [
     styles: {
       __END__: "$0"
     },
-    arguments: [{
-      a: "auto"
-    }]
+    arguments: [
+      {
+        a: "auto"
+      }
+    ]
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Bottom",
@@ -1947,11 +2091,13 @@ module.exports = [
     styles: {
       bottom: "$0"
     },
-    arguments: [{
-      a: "auto"
-    }]
+    arguments: [
+      {
+        a: "auto"
+      }
+    ]
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Start",
@@ -1960,9 +2106,11 @@ module.exports = [
     styles: {
       __START__: "$0"
     },
-    arguments: [{
-      a: "auto"
-    }]
+    arguments: [
+      {
+        a: "auto"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1977,10 +2125,12 @@ module.exports = [
     styles: {
       opacity: "$0"
     },
-    arguments: [{
-      0: "0",
-      1: "1"
-    }]
+    arguments: [
+      {
+        0: "0",
+        1: "1"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -1996,12 +2146,14 @@ module.exports = [
     styles: {
       overflow: "$0"
     },
-    arguments: [{
-      a: "auto",
-      h: "hidden",
-      s: "scroll",
-      v: "visible"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        h: "hidden",
+        s: "scroll",
+        v: "visible"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2016,12 +2168,14 @@ module.exports = [
     styles: {
       "overflow-x": "$0"
     },
-    arguments: [{
-      a: "auto",
-      h: "hidden",
-      s: "scroll",
-      v: "visible"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        h: "hidden",
+        s: "scroll",
+        v: "visible"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2036,12 +2190,14 @@ module.exports = [
     styles: {
       "overflow-y": "$0"
     },
-    arguments: [{
-      a: "auto",
-      h: "hidden",
-      s: "scroll",
-      v: "visible"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        h: "hidden",
+        s: "scroll",
+        v: "visible"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2056,10 +2212,12 @@ module.exports = [
     styles: {
       "-webkit-overflow-scrolling": "$0"
     },
-    arguments: [{
-      a: "auto",
-      touch: "touch"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        touch: "touch"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2099,7 +2257,7 @@ module.exports = [
       "padding-bottom": "$0"
     }
   },
-  // top
+  // Top
   {
     type: "pattern",
     name: "Padding top",
@@ -2109,7 +2267,7 @@ module.exports = [
       "padding-top": "$0"
     }
   },
-  // end
+  // End
   {
     type: "pattern",
     name: "Padding end",
@@ -2119,7 +2277,7 @@ module.exports = [
       "padding-__END__": "$0"
     }
   },
-  // bottom
+  // Bottom
   {
     type: "pattern",
     name: "Padding bottom",
@@ -2129,7 +2287,7 @@ module.exports = [
       "padding-bottom": "$0"
     }
   },
-  // start
+  // Start
   {
     type: "pattern",
     name: "Padding start",
@@ -2152,18 +2310,20 @@ module.exports = [
     styles: {
       "pointer-events": "$0"
     },
-    arguments: [{
-      a: "auto",
-      all: "all",
-      f: "fill",
-      n: "none",
-      p: "painted",
-      s: "stroke",
-      v: "visible",
-      vf: "visibleFill",
-      vp: "visiblePainted",
-      vs: "visibleStroke"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        all: "all",
+        f: "fill",
+        n: "none",
+        p: "painted",
+        s: "stroke",
+        v: "visible",
+        vf: "visibleFill",
+        vp: "visiblePainted",
+        vs: "visibleStroke"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2178,13 +2338,15 @@ module.exports = [
     styles: {
       position: "$0"
     },
-    arguments: [{
-      a: "absolute",
-      f: "fixed",
-      r: "relative",
-      s: "static",
-      st: "sticky"
-    }]
+    arguments: [
+      {
+        a: "absolute",
+        f: "fixed",
+        r: "relative",
+        s: "static",
+        st: "sticky"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2199,12 +2361,14 @@ module.exports = [
     styles: {
       resize: "$0"
     },
-    arguments: [{
-      n: "none",
-      b: "both",
-      h: "horizontal",
-      v: "vertical"
-    }]
+    arguments: [
+      {
+        n: "none",
+        b: "both",
+        h: "horizontal",
+        v: "vertical"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2219,10 +2383,12 @@ module.exports = [
     styles: {
       "table-layout": "$0"
     },
-    arguments: [{
-      a: "auto",
-      f: "fixed"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        f: "fixed"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2237,15 +2403,17 @@ module.exports = [
     styles: {
       "text-align": "$0"
     },
-    arguments: [{
-      c: "center",
-      e: "end",
-      end: "__END__",
-      j: "justify",
-      mp: "match-parent",
-      s: "start",
-      start: "__START__"
-    }]
+    arguments: [
+      {
+        c: "center",
+        e: "end",
+        end: "__END__",
+        j: "justify",
+        mp: "match-parent",
+        s: "start",
+        start: "__START__"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2260,15 +2428,17 @@ module.exports = [
     styles: {
       "text-align-last": "$0"
     },
-    arguments: [{
-      a: "auto",
-      c: "center",
-      e: "end",
-      end: "__END__",
-      j: "justify",
-      s: "start",
-      start: "__START__"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        c: "center",
+        e: "end",
+        end: "__END__",
+        j: "justify",
+        s: "start",
+        start: "__START__"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2284,12 +2454,14 @@ module.exports = [
     styles: {
       "text-decoration": "$0"
     },
-    arguments: [{
-      lt: "line-through",
-      n: "none",
-      o: "overline",
-      u: "underline"
-    }]
+    arguments: [
+      {
+        lt: "line-through",
+        n: "none",
+        o: "overline",
+        u: "underline"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2318,10 +2490,12 @@ module.exports = [
     styles: {
       "text-overflow": "$0"
     },
-    arguments: [{
-      c: "clip",
-      e: "ellipsis"
-    }]
+    arguments: [
+      {
+        c: "clip",
+        e: "ellipsis"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2336,12 +2510,14 @@ module.exports = [
     styles: {
       "text-rendering": "$0"
     },
-    arguments: [{
-      a: "auto",
-      os: "optimizeSpeed",
-      ol: "optimizeLegibility",
-      gp: "geometricPrecision"
-    }]
+    arguments: [
+      {
+        a: "auto",
+        os: "optimizeSpeed",
+        ol: "optimizeLegibility",
+        gp: "geometricPrecision"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2357,9 +2533,11 @@ module.exports = [
     styles: {
       "text-replace": "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2374,12 +2552,14 @@ module.exports = [
     styles: {
       "text-transform": "$0"
     },
-    arguments: [{
-      n: "none",
-      c: "capitalize",
-      u: "uppercase",
-      l: "lowercase"
-    }]
+    arguments: [
+      {
+        n: "none",
+        c: "capitalize",
+        u: "uppercase",
+        l: "lowercase"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2394,9 +2574,11 @@ module.exports = [
     styles: {
       "text-shadow": "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2414,7 +2596,7 @@ module.exports = [
       transform: "$0"
     }
   },
-  // transform-origin
+  // Transform-origin
   {
     type: "pattern",
     name: "Transform origin",
@@ -2423,21 +2605,24 @@ module.exports = [
     styles: {
       "transform-origin": "$0 $1"
     },
-    arguments: [{
-      t: "top",
-      end: "__END__",
-      bottom: "bottom",
-      start: "__START__",
-      c: "center"
-    }, {
-      t: "top",
-      end: "__END__",
-      bottom: "bottom",
-      start: "__START__",
-      c: "center"
-    }]
+    arguments: [
+      {
+        t: "top",
+        end: "__END__",
+        bottom: "bottom",
+        start: "__START__",
+        c: "center"
+      },
+      {
+        t: "top",
+        end: "__END__",
+        bottom: "bottom",
+        start: "__START__",
+        c: "center"
+      }
+    ]
   },
-  // transform-style
+  // Transform-style
   {
     type: "pattern",
     name: "Transform style",
@@ -2446,12 +2631,14 @@ module.exports = [
     styles: {
       "transform-style": "$0"
     },
-    arguments: [{
-      f: "flat",
-      p: "preserve-3d"
-    }]
+    arguments: [
+      {
+        f: "flat",
+        p: "preserve-3d"
+      }
+    ]
   },
-  // perspective
+  // Perspective
   {
     type: "pattern",
     name: "Perspective",
@@ -2460,11 +2647,13 @@ module.exports = [
     styles: {
       perspective: "$0"
     },
-    arguments: [{
-      n: "none"
-    }]
+    arguments: [
+      {
+        n: "none"
+      }
+    ]
   },
-  // perspective-origin
+  // Perspective-origin
   {
     type: "pattern",
     name: "Perspective origin",
@@ -2473,21 +2662,24 @@ module.exports = [
     styles: {
       "perspective-origin": "$0 $1"
     },
-    arguments: [{
-      t: "top",
-      end: "__END__",
-      bottom: "bottom",
-      start: "__START__",
-      c: "center"
-    }, {
-      t: "top",
-      end: "__END__",
-      bottom: "bottom",
-      start: "__START__",
-      c: "center"
-    }]
+    arguments: [
+      {
+        t: "top",
+        end: "__END__",
+        bottom: "bottom",
+        start: "__START__",
+        c: "center"
+      },
+      {
+        t: "top",
+        end: "__END__",
+        bottom: "bottom",
+        start: "__START__",
+        c: "center"
+      }
+    ]
   },
-  // backface-visibility
+  // Backface-visibility
   {
     type: "pattern",
     name: "Backface visibility",
@@ -2496,12 +2688,14 @@ module.exports = [
     styles: {
       "backface-visibility": "$0"
     },
-    arguments: [{
-      h: "hidden",
-      v: "visible"
-    }]
+    arguments: [
+      {
+        h: "hidden",
+        v: "visible"
+      }
+    ]
   },
-  // matrix
+  // Matrix
   {
     type: "pattern",
     name: "Matrix (transform)",
@@ -2511,7 +2705,7 @@ module.exports = [
       transform: "matrix($0)"
     }
   },
-  // matrix3d
+  // Matrix3d
   {
     type: "pattern",
     name: "Matrix 3d (transform)",
@@ -2521,7 +2715,7 @@ module.exports = [
       transform: "matrix($0)"
     }
   },
-  // rotate
+  // Rotate
   {
     type: "pattern",
     name: "Rotate (transform)",
@@ -2531,7 +2725,7 @@ module.exports = [
       transform: "rotate($0)"
     }
   },
-  // rotate3d
+  // Rotate3d
   {
     type: "pattern",
     name: "Rotate 3d (transform)",
@@ -2541,7 +2735,7 @@ module.exports = [
       transform: "rotate3d($0,$1,$2,$3)"
     }
   },
-  // rotateX
+  // RotateX
   {
     type: "pattern",
     name: "RotateX (transform)",
@@ -2551,7 +2745,7 @@ module.exports = [
       transform: "rotateX($0)"
     }
   },
-  // rotateY
+  // RotateY
   {
     type: "pattern",
     name: "RotateY (transform)",
@@ -2561,7 +2755,7 @@ module.exports = [
       transform: "rotateY($0)"
     }
   },
-  // rotateZ
+  // RotateZ
   {
     type: "pattern",
     name: "RotateZ (transform)",
@@ -2571,7 +2765,7 @@ module.exports = [
       transform: "rotateZ($0)"
     }
   },
-  // scale
+  // Scale
   {
     type: "pattern",
     name: "Scale (transform)",
@@ -2581,7 +2775,7 @@ module.exports = [
       transform: "scale($0,$1)"
     }
   },
-  // scale3d
+  // Scale3d
   {
     type: "pattern",
     name: "Scale 3d (transform)",
@@ -2591,7 +2785,7 @@ module.exports = [
       transform: "scale3d($0,$1,$2)"
     }
   },
-  // scaleX
+  // ScaleX
   {
     type: "pattern",
     name: "ScaleX (transform)",
@@ -2601,7 +2795,7 @@ module.exports = [
       transform: "scaleX($0)"
     }
   },
-  // scaleY
+  // ScaleY
   {
     type: "pattern",
     name: "ScaleY (transform)",
@@ -2611,7 +2805,7 @@ module.exports = [
       transform: "scaleY($0)"
     }
   },
-  // skew
+  // Skew
   {
     type: "pattern",
     name: "Skew (transform)",
@@ -2621,7 +2815,7 @@ module.exports = [
       transform: "skew($0,$1)"
     }
   },
-  // skewX
+  // SkewX
   {
     type: "pattern",
     name: "SkewX (transform)",
@@ -2631,7 +2825,7 @@ module.exports = [
       transform: "skewX($0)"
     }
   },
-  // skewY
+  // SkewY
   {
     type: "pattern",
     name: "SkewY (transform)",
@@ -2641,7 +2835,7 @@ module.exports = [
       transform: "skewY($0)"
     }
   },
-  // translate
+  // Translate
   {
     type: "pattern",
     name: "Translate (transform)",
@@ -2651,7 +2845,7 @@ module.exports = [
       transform: "translate($0,$1)"
     }
   },
-  // translate3d
+  // Translate3d
   {
     type: "pattern",
     name: "Translate 3d (transform)",
@@ -2661,7 +2855,7 @@ module.exports = [
       transform: "translate3d($0,$1,$2)"
     }
   },
-  // translateX
+  // TranslateX
   {
     type: "pattern",
     name: "Translate X (transform)",
@@ -2671,7 +2865,7 @@ module.exports = [
       transform: "translateX($0)"
     }
   },
-  // translateY
+  // TranslateY
   {
     type: "pattern",
     name: "Translate Y (transform)",
@@ -2681,7 +2875,7 @@ module.exports = [
       transform: "translateY($0)"
     }
   },
-  // translateZ
+  // TranslateZ
   {
     type: "pattern",
     name: "Translate Z (transform)",
@@ -2707,7 +2901,7 @@ module.exports = [
       transition: "$0"
     }
   },
-  // transition-delay
+  // Transition-delay
   {
     type: "pattern",
     name: "Transition delay",
@@ -2716,11 +2910,13 @@ module.exports = [
     styles: {
       "transition-delay": "$0"
     },
-    arguments: [{
-      i: "initial"
-    }]
+    arguments: [
+      {
+        i: "initial"
+      }
+    ]
   },
-  // transition-duration
+  // Transition-duration
   {
     type: "pattern",
     name: "Transition duration",
@@ -2730,7 +2926,7 @@ module.exports = [
       "transition-duration": "$0"
     }
   },
-  // transition-property
+  // Transition-property
   {
     type: "pattern",
     name: "Transition property",
@@ -2739,11 +2935,13 @@ module.exports = [
     styles: {
       "transition-property": "$0"
     },
-    arguments: [{
-      a: "all"
-    }]
+    arguments: [
+      {
+        a: "all"
+      }
+    ]
   },
-  // transition-timing-function
+  // Transition-timing-function
   {
     type: "pattern",
     name: "Transition timing function",
@@ -2752,15 +2950,17 @@ module.exports = [
     styles: {
       "transition-timing-function": "$0"
     },
-    arguments: [{
-      e: "ease",
-      ei: "ease-in",
-      eo: "ease-out",
-      eio: "ease-in-out",
-      l: "linear",
-      ss: "step-start",
-      se: "step-end"
-    }]
+    arguments: [
+      {
+        e: "ease",
+        ei: "ease-in",
+        eo: "ease-out",
+        eio: "ease-in-out",
+        l: "linear",
+        ss: "step-start",
+        se: "step-end"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2775,14 +2975,16 @@ module.exports = [
     styles: {
       "user-select": "$0"
     },
-    arguments: [{
-      a: "all",
-      el: "element",
-      els: "elements",
-      n: "none",
-      t: "text",
-      to: "toggle"
-    }]
+    arguments: [
+      {
+        a: "all",
+        el: "element",
+        els: "elements",
+        n: "none",
+        t: "text",
+        to: "toggle"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2797,16 +2999,18 @@ module.exports = [
     styles: {
       "vertical-align": "$0"
     },
-    arguments: [{
-      b: "bottom",
-      bl: "baseline",
-      m: "middle",
-      sub: "sub",
-      sup: "super",
-      t: "top",
-      tb: "text-bottom",
-      tt: "text-top"
-    }]
+    arguments: [
+      {
+        b: "bottom",
+        bl: "baseline",
+        m: "middle",
+        sub: "sub",
+        sup: "super",
+        t: "top",
+        tb: "text-bottom",
+        tt: "text-top"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2821,11 +3025,13 @@ module.exports = [
     styles: {
       visibility: "$0"
     },
-    arguments: [{
-      v: "visible",
-      h: "hidden",
-      c: "collapse"
-    }]
+    arguments: [
+      {
+        v: "visible",
+        h: "hidden",
+        c: "collapse"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2840,13 +3046,15 @@ module.exports = [
     styles: {
       "white-space": "$0"
     },
-    arguments: [{
-      n: "normal",
-      p: "pre",
-      nw: "nowrap",
-      pw: "pre-wrap",
-      pl: "pre-line"
-    }]
+    arguments: [
+      {
+        n: "normal",
+        p: "pre",
+        nw: "nowrap",
+        pw: "pre-wrap",
+        pl: "pre-line"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2861,13 +3069,15 @@ module.exports = [
     styles: {
       "white-space-collapse": "$0"
     },
-    arguments: [{
-      n: "normal",
-      ka: "keep-all",
-      l: "loose",
-      bs: "break-strict",
-      ba: "break-all"
-    }]
+    arguments: [
+      {
+        n: "normal",
+        ka: "keep-all",
+        l: "loose",
+        bs: "break-strict",
+        ba: "break-all"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2882,16 +3092,18 @@ module.exports = [
     styles: {
       width: "$0"
     },
-    arguments: [{
-      0: "0",
-      a: "auto",
-      bb: "border-box",
-      cb: "content-box",
-      av: "available",
-      minc: "min-content",
-      maxc: "max-content",
-      fc: "fit-content"
-    }]
+    arguments: [
+      {
+        0: "0",
+        a: "auto",
+        bb: "border-box",
+        cb: "content-box",
+        av: "available",
+        minc: "min-content",
+        maxc: "max-content",
+        fc: "fit-content"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2906,11 +3118,13 @@ module.exports = [
     styles: {
       "word-break": "$0"
     },
-    arguments: [{
-      ba: "break-all",
-      ka: "keep-all",
-      n: "normal"
-    }]
+    arguments: [
+      {
+        ba: "break-all",
+        ka: "keep-all",
+        n: "normal"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2925,10 +3139,12 @@ module.exports = [
     styles: {
       "word-wrap": "$0"
     },
-    arguments: [{
-      bw: "break-word",
-      n: "normal"
-    }]
+    arguments: [
+      {
+        bw: "break-word",
+        n: "normal"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2943,9 +3159,11 @@ module.exports = [
     styles: {
       "z-index": "$0"
     },
-    arguments: [{
-      a: "auto"
-    }]
+    arguments: [
+      {
+        a: "auto"
+      }
+    ]
   },
   /**
     ==================================================================
@@ -2980,9 +3198,11 @@ module.exports = [
     styles: {
       "stroke-width": "$0"
     },
-    arguments: [{
-      i: "inherit"
-    }]
+    arguments: [
+      {
+        i: "inherit"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -2992,12 +3212,14 @@ module.exports = [
     styles: {
       "stroke-linecap": "$0"
     },
-    arguments: [{
-      i: "inherit",
-      b: "butt",
-      r: "round",
-      s: "square"
-    }]
+    arguments: [
+      {
+        i: "inherit",
+        b: "butt",
+        r: "round",
+        s: "square"
+      }
+    ]
   },
   {
     type: "pattern",
@@ -3007,11 +3229,13 @@ module.exports = [
     styles: {
       "stroke-linejoin": "$0"
     },
-    arguments: [{
-      i: "inherit",
-      b: "bevel",
-      r: "round",
-      m: "miter"
-    }]
+    arguments: [
+      {
+        i: "inherit",
+        b: "bevel",
+        r: "round",
+        m: "miter"
+      }
+    ]
   }
 ];

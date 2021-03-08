@@ -64,10 +64,9 @@ module.exports = [
       "border-bottom-width": "1px",
       "border-left-width": 0,
       "border-style": "solid"
-
     }
   },
-  // top
+  // Top
   {
     type: "helper",
     name: "Border Top 1px solid",
@@ -83,11 +82,12 @@ module.exports = [
       "border-style": "solid"
     }
   },
-  // end
+  // End
   {
     type: "helper",
     name: "Border End 1px solid",
-    description: "Creates a 1px border on the right edge of a box (in a LTR context)",
+    description:
+      "Creates a 1px border on the right edge of a box (in a LTR context)",
     link: "https://acss.io/guides/helper-classes.html#-bd-borders-",
     matcher: "BdEnd",
     noParams: true,
@@ -99,7 +99,7 @@ module.exports = [
       "border-style": "solid"
     }
   },
-  // bottom
+  // Bottom
   {
     type: "helper",
     name: "Border Bottom 1px solid",
@@ -115,11 +115,12 @@ module.exports = [
       "border-style": "solid"
     }
   },
-  // start
+  // Start
   {
     type: "helper",
     name: "Border Start 1px solid",
-    description: "Creates a 1px border on the left edge of a box (in a LTR context)",
+    description:
+      "Creates a 1px border on the left edge of a box (in a LTR context)",
     link: "https://acss.io/guides/helper-classes.html#-bd-borders-",
     matcher: "BdStart",
     noParams: true,
@@ -142,12 +143,13 @@ module.exports = [
     type: "helper",
     name: "Block-formatting context",
     description: "Creates a block-formatting context",
-    link: "https://acss.io/guides/helper-classes.html#-bfchack-block-formatting-context-",
+    link:
+      "https://acss.io/guides/helper-classes.html#-bfchack-block-formatting-context-",
     matcher: "BfcHack",
     noParams: true,
     styles: {
       display: "table-cell",
-      width: "1600px", /* 1 */
+      width: "1600px" /* 1 */,
       "*width": "auto",
       zoom: 1
     }
@@ -169,7 +171,7 @@ module.exports = [
     },
     rules: {
       ".Cf:before, .Cf:after": {
-        content: "\" \"",
+        content: '" "',
         display: "table"
       },
       ".Cf:after": {
@@ -186,7 +188,8 @@ module.exports = [
   {
     type: "helper",
     name: "Ellipsis",
-    description: "Use to create a one-liner with ellipsis (in browsers that support text-overflow:ellipsis).",
+    description:
+      "Use to create a one-liner with ellipsis (in browsers that support text-overflow:ellipsis).",
     link: "https://acss.io/guides/helper-classes.html#-ell-ellipsis-",
     matcher: "Ell",
     noParams: true,
@@ -199,7 +202,7 @@ module.exports = [
     },
     rules: {
       ".Ell:after": {
-        content: "\".\"",
+        content: '"."',
         "font-size": 0,
         visibility: "hidden",
         display: "inline-block",
@@ -218,8 +221,10 @@ module.exports = [
   {
     type: "helper",
     name: "Hiding content from sighted users",
-    description: "Hides content from sighted users but leaves it accessible to screen readers",
-    link: "https://acss.io/guides/helper-classes.html#hiding-content-from-sighted-users",
+    description:
+      "Hides content from sighted users but leaves it accessible to screen readers",
+    link:
+      "https://acss.io/guides/helper-classes.html#hiding-content-from-sighted-users",
     matcher: "Hidden",
     noParams: true,
     styles: {
@@ -288,17 +293,17 @@ module.exports = [
         zoom: 1
       },
       /**
-            * Fix WebKit bug that displays ellipsis in middle of text inside *LINKS*
-            * see: https://twitter.com/thierrykoblentz/status/443899465842176000
-            * 1. removes that hack out of the flow (bug reported by Fonda)
-            */
+       * Fix WebKit bug that displays ellipsis in middle of text inside *LINKS*
+       * see: https://twitter.com/thierrykoblentz/status/443899465842176000
+       * 1. removes that hack out of the flow (bug reported by Fonda)
+       */
       "a[class*=LineClamp]:after": {
-        content: "\".\"",
+        content: '"."',
         "font-size": 0,
         visibility: "hidden",
-        display: "inline-block", /* 1 */
-        overflow: "hidden", /* 1 */
-        height: 0, /* 1 */
+        display: "inline-block" /* 1 */,
+        overflow: "hidden" /* 1 */,
+        height: 0 /* 1 */,
         width: 0 /* 1 */
       }
     }
@@ -313,7 +318,8 @@ module.exports = [
   {
     type: "helper",
     name: "Row",
-    description: "Styles a box that expands to fill its container, contains floats, and more",
+    description:
+      "Styles a box that expands to fill its container, contains floats, and more",
     link: "https://acss.io/guides/helper-classes.html#-row-",
     matcher: "Row",
     noParams: true,

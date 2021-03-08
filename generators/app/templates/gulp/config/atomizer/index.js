@@ -22,10 +22,10 @@ module.exports = function (options = {}) {
     options = { outfile: options };
   }
 
-  // destructure options
+  // Destructure options
   let { outfile, acssConfig, cssOptions, addRules } = options;
 
-  // default options
+  // Default options
   outfile = outfile || "atomic.css";
   acssConfig = acssConfig || {};
 
@@ -35,16 +35,21 @@ module.exports = function (options = {}) {
   let foundClasses = [];
   let acss;
 
-  // create the file handler
+  // Create the file handler
   const gulpTransformer = function (file, unused, cb) {
     if (file.isNull()) {
-      // nothing to do
+      // Nothing to do
       return cb(null, file);
-    } else if (file.isStream()) {
-      // file.contents is a Stream.  We don't support streams
-      this.emit("error", new PluginError(PLUGIN_NAME, "Streams not supported!"));
+    }
+
+    if (file.isStream()) {
+      // File.contents is a Stream.  We don't support streams
+      this.emit(
+        "error",
+        new PluginError(PLUGIN_NAME, "Streams not supported!")
+      );
     } else if (file.isBuffer()) {
-      // lazy init the acss class
+      // Lazy init the acss class
       if (!acss) {
         acss = new Atomizer({ verbose: true });
 
@@ -53,42 +58,43 @@ module.exports = function (options = {}) {
         }
       }
 
-      // generate the class names and push them into the global collector array
+      // Generate the class names and push them into the global collector array
       const html = String(file.contents);
       const classes = acss.findClassNames(html);
 
       foundClasses = Array.prototype.concat(foundClasses, classes);
 
-      // make a note of this file if it's the newer than we've seen before
+      // Make a note of this file if it's the newer than we've seen before
       if (!latestMod || (file.stat && file.stat.mtime > latestMod)) {
         latestFile = file;
         latestMod = file.stat && file.stat.mtime;
       }
 
-      // tell the engine we're done
+      // Tell the engine we're done
       cb();
     }
   };
 
   const endStream = function (cb) {
-    // nothing in, nothing out
+    // Nothing in, nothing out
     if (!latestFile || !acss) {
       return cb();
     }
-    // remove duplicate classes
+
+    // Remove duplicate classes
     const classes = arrayUniq(foundClasses);
-    // merge the classes into the user's config
+    // Merge the classes into the user's config
     const finalConfig = acss.getConfig(classes, acssConfig);
-    // get the actual css
+    // Get the actual css
     const cssOut = acss.getCss(finalConfig, cssOptions);
 
-    // create the output file
+    // Create the output file
     // (take the metadata from most recent file)
     const atomicFile = latestFile.clone({ contents: false });
     atomicFile.path = path.join(latestFile.base, outfile);
     atomicFile.contents = Buffer.from(cssOut);
 
-    // all done!
+    // All done!
     this.push(atomicFile);
     cb();
   };

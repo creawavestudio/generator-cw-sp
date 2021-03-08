@@ -8,7 +8,11 @@ const rucksackcss = require("rucksack-css");
 const ifmedia = require("../media");
 
 module.exports = [
-  ifmedia, colorShort, rucksackcss, center, size,
+  ifmedia,
+  colorShort,
+  rucksackcss,
+  center,
+  size,
   browserReporter({ selector: "body:before" }),
   immutable(),
   assets({

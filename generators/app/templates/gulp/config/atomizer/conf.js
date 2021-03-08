@@ -6,11 +6,8 @@ module.exports = {
     lg: "@media screen and (min-width:1200px)"
   },
   custom: {
-    font1: "\"Roboto\", Arial",
+    font1: '"Roboto", Arial',
     bd1: "1px solid #000"
   },
-  classNames: [
-    "Bd(bd1)",
-    "D(n)!"
-  ]
+  classNames: ["Bd(bd1)", "D(n)!"]
 };

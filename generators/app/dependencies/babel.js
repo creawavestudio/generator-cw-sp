@@ -14,4 +14,4 @@ module.exports = {
     "babel-preset-es2015": "^6.24.1",
     "gulp-babel": "^8.0.0"
   }
-}
+};

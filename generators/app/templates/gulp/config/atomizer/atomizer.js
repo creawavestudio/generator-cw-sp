@@ -16,35 +16,47 @@ const XRegExp = require("xregexp");
 const RULES = require("./rules.js").concat(require("./helpers.js"));
 
 /**
- * constructor
+ * Constructor
  */
-function Atomizer (options/*: AtomizerOptions */, rules/*: AtomizerRules */) {
+function Atomizer (options /*: AtomizerOptions */, rules /*: AtomizerRules */) {
   this.verbose = (options && options.verbose) || false;
   this.rules = [];
-  // we have two different objects to avoid name collision
+  // We have two different objects to avoid name collision
   this.rulesMap = {};
   this.helpersMap = {};
 
-  // add rules
+  // Add rules
   this.addRules(rules || RULES);
 }
 
 /**
- * addRules
+ * AddRules
  * @public
  */
-Atomizer.prototype.addRules = function (rules/*: AtomizerRules */)/*: void */ {
+Atomizer.prototype.addRules = function (
+  rules /*: AtomizerRules */
+) /*: void */ {
   rules.forEach(function (rule) {
-    const ruleFound = rule.type === "pattern" && Object.prototype.hasOwnProperty.call(this.rulesMap, rule.matcher);
-    const helperFound = rule.type === "helper" && Object.prototype.hasOwnProperty.call(this.helpersMap, rule.matcher);
+    const ruleFound =
+      rule.type === "pattern" &&
+      Object.prototype.hasOwnProperty.call(this.rulesMap, rule.matcher);
+    const helperFound =
+      rule.type === "helper" &&
+      Object.prototype.hasOwnProperty.call(this.helpersMap, rule.matcher);
 
-    if ((ruleFound && !_.isEqual(this.rules[this.rulesMap[rule.matcher]], rule)) ||
-                (helperFound && !_.isEqual(this.rules[this.helpersMap[rule.matcher]], rule))) {
-      throw new Error("Rule " + rule.matcher + " already exists with a different defintion.");
+    if (
+      (ruleFound &&
+        !_.isEqual(this.rules[this.rulesMap[rule.matcher]], rule)) ||
+      (helperFound &&
+        !_.isEqual(this.rules[this.helpersMap[rule.matcher]], rule))
+    ) {
+      throw new Error(
+        "Rule " + rule.matcher + " already exists with a different defintion."
+      );
     }
 
     if (!ruleFound && !helperFound) {
-      // push new rule to this.rules and update rulesMap
+      // Push new rule to this.rules and update rulesMap
       this.rules.push(rule);
 
       if (rule.type === "pattern") {
@@ -55,19 +67,20 @@ Atomizer.prototype.addRules = function (rules/*: AtomizerRules */)/*: void */ {
     }
   }, this);
 
-  // invalidates syntax
+  // Invalidates syntax
   this.syntax = null;
   this.syntaxSimple = null;
 };
 
 /**
- * getClassNameSyntax()
+ * GetClassNameSyntax()
  * @private
  */
-Atomizer.prototype.getSyntax = function (isSimple)/*: string */ {
+Atomizer.prototype.getSyntax = function (isSimple) /*: string */ {
   if (isSimple && !this.syntaxSimple) {
     this.syntaxSimple = new Grammar(this.rules).getSyntax(true);
   }
+
   if (!isSimple && !this.syntax) {
     // All Grammar and syntax parsing  should be in the Grammar class
     this.syntax = new Grammar(this.rules).getSyntax();
@@ -77,27 +90,29 @@ Atomizer.prototype.getSyntax = function (isSimple)/*: string */ {
 };
 
 /**
- * findClassNames
+ * FindClassNames
  */
-Atomizer.prototype.findClassNames = function (src/*: string */)/*: string[] */ {
-  // using object to remove dupes
+Atomizer.prototype.findClassNames = function (
+  src /*: string */
+) /*: string[] */ {
+  // Using object to remove dupes
   const classNamesObj = {};
   let className;
   const classNameSyntax = this.getSyntax();
   let match = classNameSyntax.exec(src);
 
   while (match !== null) {
-    // strip boundary character
+    // Strip boundary character
     className = match[1];
 
-    // assign to classNamesObj as key and give it a counter
+    // Assign to classNamesObj as key and give it a counter
     classNamesObj[className] = (classNamesObj[className] || 0) + 1;
 
-    // run regex again
+    // Run regex again
     match = classNameSyntax.exec(src);
   }
 
-  // return an array of the matched class names
+  // Return an array of the matched class names
   return _.keys(classNamesObj);
 };
 
@@ -121,15 +136,20 @@ Atomizer.prototype.findClassNames = function (src/*: string */)/*: string[] */ {
  *
  * getConfig(['Op(1)', 'D(n):h']);
  */
-Atomizer.prototype.getConfig = function (classNames/*: string[] */, config/*: AtomizerConfig */)/*: AtomizerConfig */ {
+Atomizer.prototype.getConfig = function (
+  classNames /*: string[] */,
+  config /*: AtomizerConfig */
+) /*: AtomizerConfig */ {
   config = config || { classNames: [] };
-  // merge classnames with config
-  config.classNames = this.sortCSS(_.union(classNames || [], config.classNames));
+  // Merge classnames with config
+  config.classNames = this.sortCSS(
+    _.union(classNames || [], config.classNames)
+  );
   return config;
 };
 
 /**
- * return sorted rule
+ * Return sorted rule
  */
 Atomizer.prototype.sortCSS = function (classNames /* string[] */) {
   // 1. sort by alphabetical order
@@ -143,34 +163,42 @@ Atomizer.prototype.sortCSS = function (classNames /* string[] */) {
         return _.includes(value, pseudoClass);
       });
     }
+
     const aMatches = Grammar.matchValue(a);
     const bMatches = Grammar.matchValue(b);
     const aIndex = getMatchedIndex(a);
     const bIndex = getMatchedIndex(b);
 
-    // remain same default sort logic
+    // Remain same default sort logic
     if (aMatches.named !== bMatches.named) {
       return a.localeCompare(b);
     }
 
     return aIndex - bIndex;
   }
+
   classNames = classNames.sort(sortPseudoClassNames);
 
   return classNames;
 };
 
 /**
- * return a parsed tree given a config and css options
+ * Return a parsed tree given a config and css options
  */
-Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/*: CSSOptions */)/*: Tree */ {
+Atomizer.prototype.parseConfig = function (
+  config /*: AtomizerConfig */,
+  options /*: CSSOptions */
+) /*: Tree */ {
   const tree = {};
   const classNameSyntax = this.getSyntax(true);
   const warnings = [];
-  const isVerbose = !!this.verbose;
+  const isVerbose = Boolean(this.verbose);
   let classNames = config.classNames;
 
-  if (!_.isArray(config.classNames)) { return tree; }
+  if (!_.isArray(config.classNames)) {
+    return tree;
+  }
+
   options = options || {};
 
   if ("exclude" in config) {
@@ -186,26 +214,35 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
     let values;
 
     if (!match || (!match.atomicSelector && !match.selector)) {
-      // no match, no op
+      // No match, no op
       return;
     }
 
-    // check where this rule belongs to
+    // Check where this rule belongs to
     // atomicSelector is the class name before the params: e.g. className(param)
     // selector is the class name if params is not required
     // we look both in rules and in helpers where this class belongs to
-    if (Object.prototype.hasOwnProperty.call(this.rulesMap, match.atomicSelector)) {
+    if (
+      Object.prototype.hasOwnProperty.call(this.rulesMap, match.atomicSelector)
+    ) {
       ruleIndex = this.rulesMap[match.atomicSelector];
-    } else if (Object.prototype.hasOwnProperty.call(this.helpersMap, match.atomicSelector)) {
+    } else if (
+      Object.prototype.hasOwnProperty.call(
+        this.helpersMap,
+        match.atomicSelector
+      )
+    ) {
       ruleIndex = this.helpersMap[match.atomicSelector];
-    } else if (Object.prototype.hasOwnProperty.call(this.helpersMap, match.selector)) {
+    } else if (
+      Object.prototype.hasOwnProperty.call(this.helpersMap, match.selector)
+    ) {
       ruleIndex = this.helpersMap[match.selector];
     } else {
-      // not a valid class, no op
+      // Not a valid class, no op
       return;
     }
 
-    // get the rule that this class name belongs to.
+    // Get the rule that this class name belongs to.
     // this is why we created the dictionary
     // as it will return the index given a matcher.
     // eslint-disable-next-line prefer-const
@@ -224,21 +261,24 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
     if (match.parentSelector) {
       treeo.parentSelector = match.parentSelector;
     }
+
     if (match.parent) {
       treeo.parent = match.parent;
     }
+
     if (match.parentPseudo) {
       treeo.parentPseudo = match.parentPseudo;
     }
+
     if (match.parentSep) {
       treeo.parentSep = match.parentSep;
     }
 
-    // given values, return their valid form
+    // Given values, return their valid form
     if (match.atomicValues) {
       values = match.atomicValues;
 
-      // values can be separated by a comma
+      // Values can be separated by a comma
       // parse them and return a valid value
       values = values.split(",").map(function (value, index) {
         const matchVal = Grammar.matchValue(value);
@@ -256,20 +296,31 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
               value += matchVal.unit;
             }
           } else {
-            // treat as if we matched a named value
+            // Treat as if we matched a named value
             matchVal.named = [matchVal.number, matchVal.unit].join("");
           }
         }
+
         if (matchVal.fraction) {
-          // multiplying by 100 then by 10000 on purpose (instead of just multiplying by 1M),
+          // Multiplying by 100 then by 10000 on purpose (instead of just multiplying by 1M),
           // making clear the steps involved:
           // percentage: (numerator / denominator * 100)
           // 4 decimal places:  (Math.round(percentage * 10000) / 10000)
-          value = Math.round(matchVal.numerator / matchVal.denominator * 100 * 10000) / 10000 + "%";
+          value =
+            Math.round(
+              (matchVal.numerator / matchVal.denominator) * 100 * 10000
+            ) /
+              10000 +
+            "%";
         }
+
         if (matchVal.hex) {
           if (matchVal.hex !== matchVal.hex.toLowerCase()) {
-            console.warn("Warning: Only lowercase hex digits are accepted. No rules will be generated for `" + matchVal.input + "`");
+            console.warn(
+              "Warning: Only lowercase hex digits are accepted. No rules will be generated for `" +
+                matchVal.input +
+                "`"
+            );
             value = null;
           } else if (matchVal.alpha) {
             rgb = utils.hexToRgb(matchVal.hex);
@@ -288,31 +339,49 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
             value = matchVal.hex;
           }
         }
+
         if (matchVal.named) {
-          // first check if 'inh' is the value
+          // First check if 'inh' is the value
           if (matchVal.named === "inh") {
             value = "inherit";
-          } else if (rule.arguments && index < rule.arguments.length && Object.keys(rule.arguments[index]).indexOf(matchVal.named) >= 0) {
+          } else if (
+            rule.arguments &&
+            index < rule.arguments.length &&
+            Object.keys(rule.arguments[index]).indexOf(matchVal.named) >= 0
+          ) {
             value = rule.arguments[index][matchVal.named];
           } else {
-            propAndValue = [match.atomicSelector, "(", matchVal.named, ")"].join("");
+            propAndValue = [
+              match.atomicSelector,
+              "(",
+              matchVal.named,
+              ")"
+            ].join("");
 
-            // no custom, warn it
+            // No custom, warn it
             if (!config.custom) {
               warnings.push(propAndValue);
-              // set to null so we don't write it to the css
+              // Set to null so we don't write it to the css
               value = null;
-            } else if (Object.prototype.hasOwnProperty.call(config.custom, propAndValue)) {
+            } else if (
+              Object.prototype.hasOwnProperty.call(config.custom, propAndValue)
+            ) {
               value = config.custom[propAndValue];
-            } else if (Object.prototype.hasOwnProperty.call(config.custom, matchVal.named)) {
+            } else if (
+              Object.prototype.hasOwnProperty.call(
+                config.custom,
+                matchVal.named
+              )
+            ) {
               value = config.custom[matchVal.named];
             } else {
               warnings.push(propAndValue);
-              // set to null so we don't write it to the css
+              // Set to null so we don't write it to the css
               value = null;
             }
           }
         }
+
         return value;
       });
     }
@@ -329,29 +398,36 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
       treeo.breakPoint = match.breakPoint;
     }
 
-    // before we assign, let's take care of the declarations
+    // Before we assign, let's take care of the declarations
     // iterate declarations so we can replace values with their valid form
     for (const prop in treeo.declarations) {
       if (values) {
         values.forEach(function (value, index) {
-          // plug IE hacks for know properties
+          // Plug IE hacks for know properties
           if (options.ie) {
-            // block formatting context on old IE
+            // Block formatting context on old IE
             /* istanbul ignore else  */
-            if ((prop === "display" && value === "inline-block") || (prop === "overflow" && value !== "visible")) {
+            if (
+              (prop === "display" && value === "inline-block") ||
+              (prop === "overflow" && value !== "visible")
+            ) {
               treeo.declarations.zoom = 1;
             }
+
             /* istanbul ignore else  */
             if (prop === "display" && value === "inline-block") {
               treeo.declarations["*display"] = "inline";
             }
+
             /* istanbul ignore else  */
             if (prop === "opacity") {
-              treeo.declarations.filter = "alpha(opacity=" + parseFloat(value, 10) * 100 + ")";
+              treeo.declarations.filter =
+                "alpha(opacity=" + parseFloat(value, 10) * 100 + ")";
             }
           }
+
           if (value !== null && treeo.declarations) {
-            // value could be an object for custom classes with breakPoints
+            // Value could be an object for custom classes with breakPoints
             // e.g.
             // 'custom': {
             //     'P($gutter)': {
@@ -364,34 +440,60 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
             const placeholderPattern = new RegExp("\\$" + index, "g");
             if (_.isObject(value)) {
               Object.keys(value).forEach(function (bp) {
-                // don't continue if we can't find the breakPoint in the declaration
-                if (!Object.prototype.hasOwnProperty.call(config, "breakPoints") || !Object.prototype.hasOwnProperty.call(config.breakPoints, bp)) {
+                // Don't continue if we can't find the breakPoint in the declaration
+                if (
+                  !Object.prototype.hasOwnProperty.call(
+                    config,
+                    "breakPoints"
+                  ) ||
+                  !Object.prototype.hasOwnProperty.call(config.breakPoints, bp)
+                ) {
                   return;
                 }
-                treeo.declarations[config.breakPoints[bp]] = treeo.declarations[config.breakPoints[bp]] || {};
-                treeo.declarations[config.breakPoints[bp]][prop] = treeo.declarations[prop].replace(placeholderPattern, value[bp]);
+
+                treeo.declarations[config.breakPoints[bp]] =
+                  treeo.declarations[config.breakPoints[bp]] || {};
+                treeo.declarations[config.breakPoints[bp]][
+                  prop
+                ] = treeo.declarations[prop].replace(
+                  placeholderPattern,
+                  value[bp]
+                );
               });
-              // handle default value in the custom class
+              // Handle default value in the custom class
               if (!Object.prototype.hasOwnProperty.call(value, "default")) {
-                // default has not been passed, make sure we delete it
+                // Default has not been passed, make sure we delete it
                 delete treeo.declarations[prop];
               } else {
-                treeo.declarations[prop] = treeo.declarations[prop].replace(placeholderPattern, value.default);
+                treeo.declarations[prop] = treeo.declarations[prop].replace(
+                  placeholderPattern,
+                  value.default
+                );
               }
             } else {
-              treeo.declarations[prop] = treeo.declarations[prop].replace(placeholderPattern, value);
+              treeo.declarations[prop] = treeo.declarations[prop].replace(
+                placeholderPattern,
+                value
+              );
             }
           } else {
             treeo.declarations = null;
           }
         });
         // If any of the arguments in the declaration weren't replaced, then we need to clean them up
-        if (treeo.declarations && treeo.declarations[prop] && treeo.declarations[prop].indexOf("$") >= 0) {
-          treeo.declarations[prop] = treeo.declarations[prop].replace(/[,\s]?\$\d+/g, "");
+        if (
+          treeo.declarations &&
+          treeo.declarations[prop] &&
+          treeo.declarations[prop].indexOf("$") >= 0
+        ) {
+          treeo.declarations[prop] = treeo.declarations[prop].replace(
+            /[,\s]?\$\d+/g,
+            ""
+          );
         }
       }
 
-      // add important for the following cases:
+      // Add important for the following cases:
       //    - `!` was used in the class name
       //    - rule has a parent class, a namespace was given and the rule is not a helper [1]
       // [1] rules with a parent class won't have a namespace attached to the selector since
@@ -399,7 +501,11 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
       //     to give it extra specificity (to make sure it has more weight than normal atomic
       //     classes) we add important to them. Helper classes don't need it because they do
       //     not share the same namespace.
-      if (treeo.declarations && (match.important || (match.parent && options.namespace && rule.type !== "helper"))) {
+      if (
+        treeo.declarations &&
+        (match.important ||
+          (match.parent && options.namespace && rule.type !== "helper"))
+      ) {
         treeo.declarations[prop] += " !important";
       }
     }
@@ -407,15 +513,19 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
     tree[rule.matcher].push(treeo);
   }, this);
 
-  // throw warnings
+  // Throw warnings
   if (isVerbose && warnings.length > 0) {
     warnings.forEach(function (className) {
-      console.warn([
-        "Warning: Class `" + className + "` is ambiguous, and must be manually added to your config file:",
-        "\"custom\": {",
-        "    \"" + className + "\": <YOUR-CUSTOM-VALUE>",
-        "}"
-      ].join("\n"));
+      console.warn(
+        [
+          "Warning: Class `" +
+            className +
+            "` is ambiguous, and must be manually added to your config file:",
+          '"custom": {',
+          '    "' + className + '": <YOUR-CUSTOM-VALUE>',
+          "}"
+        ].join("\n")
+      );
     });
   }
 
@@ -442,26 +552,34 @@ Atomizer.prototype.parseConfig = function (config/*: AtomizerConfig */, options/
  *
  * @public
  */
-Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CSSOptions */)/*: string */ {
+Atomizer.prototype.getCss = function (
+  config /*: AtomizerConfig */,
+  options /*: CSSOptions */
+) /*: string */ {
   const jss = {};
   let tree;
   let content = "";
   let breakPoints;
 
-  options = objectAssign({}, {
-    // require: [],
-    // morph: null,
-    banner: "",
-    namespace: null,
-    rtl: false,
-    ie: false
-  }, options);
+  options = objectAssign(
+    {},
+    {
+      // Require: [],
+      // morph: null,
+      banner: "",
+      namespace: null,
+      rtl: false,
+      ie: false
+    },
+    options
+  );
 
-  // validate config.breakPoints
+  // Validate config.breakPoints
   if (config && config.breakPoints) {
     if (!_.isObject(config.breakPoints)) {
       throw new TypeError("`config.breakPoints` must be an Object");
     }
+
     /* istanbul ignore else  */
     if (_.size(config.breakPoints) > 0) {
       for (const bp in config.breakPoints) {
@@ -474,20 +592,20 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
     }
   }
 
-  // make sense of the config
+  // Make sense of the config
   // eslint-disable-next-line prefer-const
   tree = this.parseConfig(config, options);
 
-  // write JSS
+  // Write JSS
   // start by iterating rules (we need to follow the order that the rules were declared)
   this.rules.forEach(function (rule) {
-    // check if we have a class name that matches this rule
+    // Check if we have a class name that matches this rule
     if (tree[rule.matcher]) {
       tree[rule.matcher].forEach(function (treeo) {
         let breakPoint;
         let selector;
 
-        // if we were not able to find the declaration then don't write anything
+        // If we were not able to find the declaration then don't write anything
         if (!treeo.declarations) {
           return;
         }
@@ -495,29 +613,30 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
         // eslint-disable-next-line prefer-const
         breakPoint = breakPoints && breakPoints[treeo.breakPoint];
 
-        // this is where we start writing the selector
+        // This is where we start writing the selector
         selector = Atomizer.escapeSelector(treeo.className);
 
-        // handle parent classname
+        // Handle parent classname
         if (treeo.parentSelector) {
           selector = [
             Atomizer.escapeSelector(treeo.parent),
             Grammar.getPseudo(treeo.parentPseudo),
-            treeo.parentSep === "_" ? " " : [" ", treeo.parentSep, " "].join(""),
+            treeo.parentSep === "_"
+              ? " "
+              : [" ", treeo.parentSep, " "].join(""),
             ".",
             selector
           ].join("");
         }
 
-        // handle pseudo class in values
+        // Handle pseudo class in values
         if (treeo.valuePseudoClass) {
-          selector = [
-            selector,
-            Grammar.getPseudo(treeo.valuePseudoClass)
-          ].join("");
+          selector = [selector, Grammar.getPseudo(treeo.valuePseudoClass)].join(
+            ""
+          );
         }
 
-        // handle pseudo element in values
+        // Handle pseudo element in values
         if (treeo.valuePseudoElement) {
           selector = [
             selector,
@@ -525,10 +644,10 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
           ].join("");
         }
 
-        // add the dot for the class
+        // Add the dot for the class
         selector = [".", selector].join("");
 
-        // add the namespace only if we don't have a parent selector
+        // Add the namespace only if we don't have a parent selector
         if (!treeo.parent) {
           if (rule.type === "helper" && options.helpersNamespace) {
             selector = [options.helpersNamespace, " ", selector].join("");
@@ -537,17 +656,18 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
           }
         }
 
-        // rules are companion classes to the main atomic class
+        // Rules are companion classes to the main atomic class
         if (rule.rules) {
           _.merge(jss, rule.rules);
         }
 
-        // finaly, write the final parts
+        // Finaly, write the final parts
         // put the declaration to the JSS object with the associated class name
         /* istanbul ignore else */
         if (!jss[selector]) {
           jss[selector] = {};
         }
+
         if (breakPoint) {
           jss[selector][breakPoint] = treeo.declarations;
         } else {
@@ -557,12 +677,14 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
     }
   });
 
-  // convert JSS to CSS
-  content = options.banner + JSS.jssToCss(jss, {
-    breakPoints: breakPoints
-  });
+  // Convert JSS to CSS
+  content =
+    options.banner +
+    JSS.jssToCss(jss, {
+      breakPoints: breakPoints
+    });
 
-  // fix the comma problem in Absurd
+  // Fix the comma problem in Absurd
   content = Atomizer.replaceConstants(content, options.rtl);
 
   return content;
@@ -572,7 +694,7 @@ Atomizer.prototype.getCss = function (config/*: AtomizerConfig */, options/*: CS
  * Escape CSS selectors with a backslash
  * e.g. ".W-100%" => ".W-100\%"
  */
-Atomizer.escapeSelector = function (str/*: string */)/*: string */ {
+Atomizer.escapeSelector = function (str /*: string */) /*: string */ {
   if (!str && str !== 0) {
     throw new TypeError("str must be present");
   }
@@ -583,17 +705,26 @@ Atomizer.escapeSelector = function (str/*: string */)/*: string */ {
 
   // TODO: maybe find a better regex? (-?) is here because '-' is considered a word boundary
   // so we get it and put it back to the string.
-  return str.replace(/\b(-?)([^-_a-zA-Z0-9\s]+)/g, function (str, dash, characters) {
-    return dash + characters.split("").map(function (character) {
-      return ["\\", character].join("");
-    }).join("");
-  });
+  return str.replace(
+    /\b(-?)([^-_a-zA-Z0-9\s]+)/g,
+    function (str, dash, characters) {
+      return (
+        dash +
+        characters
+          .split("")
+          .map(function (character) {
+            return ["\\", character].join("");
+          })
+          .join("")
+      );
+    }
+  );
 };
 
 /**
  * Replace LTR/RTL placeholders with actual left/right strings
  */
-Atomizer.replaceConstants = function (str/*: string */, rtl/*: boolean */) {
+Atomizer.replaceConstants = function (str /*: string */, rtl /*: boolean */) {
   const start = rtl ? "right" : "left";
   const end = rtl ? "left" : "right";
 

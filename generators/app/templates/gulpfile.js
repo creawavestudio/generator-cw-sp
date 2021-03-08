@@ -1,8 +1,9 @@
 const NODE_ENV = process.env.NODE_ENV || "development";
 const tasks = ["compile"];
 
-if (NODE_ENV !== "production") 
+if (NODE_ENV !== "production") {
   tasks.push(...["serve", "watch"]);
+}
 
 global.$ = {
   fs: require("fs"),
@@ -34,8 +35,8 @@ global.$ = {
   gp: require("./gulp/config/constants")(),
   path: {
     tasks: require("./gulp/config/tasks.js")
-  }
-}
+  },
+};
 
-$.path.tasks.forEach(taskPath => require(taskPath)());
+$.path.tasks.forEach((taskPath) => require(taskPath)());
 $.gulp.task("default", $.gulp.parallel.apply($.gulp, tasks));
