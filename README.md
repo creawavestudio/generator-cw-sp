@@ -28,5 +28,10 @@ yo cw-sp
 MIT © [Denis](https://github.com/Defus-E/)
 
 
-[npm-image]: https://badge.fury.io/js/generator-cw-sp.svg
-[npm-url]: https://npmjs.org/package/generator-cw-sp
+[npm-image]: https://badge.fury.io/js/generator-cw-s
+[travis-image]: https://travis-ci.com/creawavestudio/generator-cw-sp.svg?branch=master
+[travis-url]: https://travis-ci.com/creawavestudio/generator-cw-sp
+#[daviddm-image]: https://david-dm.org/creawavestudio/generator-cw-sp.svg?theme=shields.io
+#[daviddm-url]: https://david-dm.org/creawavestudio/generator-cw-sp
+#[coveralls-image]: https://coveralls.io/repos/creawavestudio/generator-cw-sp/badge.svg
+#[coveralls-url]: https://coveralls.io/r/creawavestudio/generator-cw-sp
