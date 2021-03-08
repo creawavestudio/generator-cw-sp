@@ -1,5 +1,5 @@
+<<<<<<< HEAD
 # generator-cw-sp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> 
 
 ## Installation
 
@@ -30,9 +30,9 @@ MIT © [Defus-E](https://github.com/Defus-E)
 
 [npm-image]: https://badge.fury.io/js/generator-cw-sp.svg
 [npm-url]: https://npmjs.org/package/generator-cw-sp
-[travis-image]: https://travis-ci.com/Creawave Studio/generator-cw-sp.svg?branch=master
-[travis-url]: https://travis-ci.com/Creawave Studio/generator-cw-sp
-[daviddm-image]: https://david-dm.org/Creawave Studio/generator-cw-sp.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/Creawave Studio/generator-cw-sp
-[coveralls-image]: https://coveralls.io/repos/Creawave Studio/generator-cw-sp/badge.svg
-[coveralls-url]: https://coveralls.io/r/Creawave Studio/generator-cw-sp
+[travis-image]: https://travis-ci.com/creawavestudio/generator-cw-sp.svg?branch=master
+[travis-url]: https://travis-ci.com/creawavestudio/generator-cw-sp
+[daviddm-image]: https://david-dm.org/creawavestudio/generator-cw-sp.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/creawavestudio/generator-cw-sp
+[coveralls-image]: https://coveralls.io/repos/github/creawavestudio/generator-cw-sp/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/creawavestudio/generator-cw-sp?branch=master
