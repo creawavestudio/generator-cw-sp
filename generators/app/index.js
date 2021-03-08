@@ -231,7 +231,7 @@ class CreaWSP extends Generator {
 
     // Rest files
     this.fs.copy(this.templatePath(".eslintrc"), this.destinationPath(".eslintrc"));
-    this.fs.copy(this.templatePath(".gitignore"), this.destinationPath(".gitignore"));
+    this.fs.copy(this.templatePath("gitignore"), this.destinationPath(".gitignore"));
     this.fs.copy(this.templatePath(".travis.yml"), this.destinationPath(".travis.yml"));
     this.fs.copy(this.templatePath("gulp/config/constants/index.js"), this.destinationPath("gulp/config/constants/index.js"));
     this.fs.write(this.destinationPath("gulp/config/tasks.js"), `module.exports=[${tasks.toString()}]`);
