@@ -67,7 +67,8 @@
     ]
   },
   "scripts": {
-    "pretest": "eslint . --fix"
+    "pretest": "eslint . --fix",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
