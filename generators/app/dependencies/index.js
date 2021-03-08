@@ -1,0 +1,63 @@
+module.exports = {
+  "scripts": {
+    "start": "yarn run lint && cross-env NODE_ENV=development gulp",
+    "build": "yarn run lint && cross-env NODE_ENV=production gulp",
+    "lint": "eslint \"./gulp/**/*.js\" --quiet --fix",
+    "postinstall": "git init"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "del": "^6.0.0",
+    "browser-sync": "^2.26.14",
+    "child_process": "^1.0.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.7.0",
+    "array-uniq": "^2.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-cssfont64": "^0.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber-notifier": "^0.1.0",
+    "gulp-dependents": "^1.2.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-cached": "^1.1.1",
+    "immutable-css": "^1.1.2",
+    "gulp.spritesmith": "^6.11.0",
+    "node-sass-magic-importer": "^5.3.2",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-webp": "^4.0.1",
+    "gulp-if": "^3.0.0",
+    "pug-beautify": "^0.1.1",
+    "html2pug": "^4.0.0",
+    "critical": "^2.0.6",
+    "uncss": "^0.17.3",
+    "xregexp": "^4.3.0",
+    "rucksack-css": "^1.0.2",
+    "postcss-center": "^1.1.0",
+    "postcss-color-short": "^0.2.4",
+    "postcss-cssnext": "^3.1.0",
+    "postcss": "^8.2.5",
+    "postcss-assets": "^5.0.0",
+    "postcss-uncss": "^0.17.0",
+    "postcss-if-media": "^1.0.3",
+    "postcss-extract-media-query": "^2.0.0",
+    "postcss-browser-reporter": "^0.6.0",
+    "postcss-size": "^4.0.1"
+  }
+}

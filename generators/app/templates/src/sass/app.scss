@@ -1,0 +1,10 @@
+@import "./_mixins/media";
+@import "./_helpers/vars";
+@import "./_helpers/sprite";
+@import "{ .test1 } from test.scss";
+
+
+
+.test {
+    color: #fff \media -xs ,-md;
+}

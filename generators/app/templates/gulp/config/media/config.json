@@ -1,0 +1,7 @@
+{
+    "screen": "screen",
+    "xs": "(max-width:700px)",
+    "sm": "(min-width:700px)",
+    "md": "(min-width:999px)",
+    "lg": "(min-width:1200px)"
+ }
