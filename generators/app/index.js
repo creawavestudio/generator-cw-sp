@@ -111,8 +111,7 @@ class CreaWSP extends Generator {
   async promptingSecond() {
     this.log(chalk.green("\n Choose the preprocessors that you are using."));
 
-    const _processors = [
-      {
+    const _processors = [{
         type: "list",
         name: "html",
         message: "HTML preprocessors:",
@@ -251,7 +250,7 @@ class CreaWSP extends Generator {
     mkdir("src/img");
     mkdir("src/i/icons");
     mkdir("src/sprite/");
-    
+
     if (this.choice.html === "pug")
       mkdir("src/pug/helpers/");
   }
