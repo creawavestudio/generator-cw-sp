@@ -208,7 +208,6 @@ class CreaWSP extends Generator {
       '"./gulp/tasks/server/watch"',
       '"./gulp/tasks/images/misc"',
       '"./gulp/tasks/other/uncss"',
-      '"./gulp/tasks/other/sprite"',
     ];
 
     // Configuration
@@ -299,10 +298,6 @@ class CreaWSP extends Generator {
       this.destinationPath("gulp/tasks/other/acss.js")
     );
     this.fs.copy(
-      this.templatePath("gulp/tasks/other/sprite.js"),
-      this.destinationPath("gulp/tasks/other/sprite.js")
-    );
-    this.fs.copy(
       this.templatePath("gulp/tasks/other/critical.js"),
       this.destinationPath("gulp/tasks/other/critical.js")
     );
@@ -328,10 +323,6 @@ class CreaWSP extends Generator {
     this.fs.copy(
       this.templatePath("src/templates/*.mustache"),
       this.destinationPath("src/templates/")
-    );
-    this.fs.copy(
-      this.templatePath("src/i/sprites/_sprite_template.scss"),
-      this.destinationPath("src/i/sprites/_sprite_template.scss")
     );
     this.fs.copy(
       this.templatePath(`src/${this.choice.html}/**/*.${this.choice.html}`),
@@ -378,7 +369,6 @@ class CreaWSP extends Generator {
 
     mkdir("src/img");
     mkdir("src/i/icons");
-    mkdir("src/sprite/");
 
     if (this.choice.html === "pug") mkdir("src/pug/helpers/");
   }

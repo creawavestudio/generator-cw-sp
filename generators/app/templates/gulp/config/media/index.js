@@ -20,8 +20,8 @@ module.exports = function (opts) {
         rule.each(function (node) {
           if (
             node.type === "rule" &&
-            (node.selector.indexOf("/") === 0 ||
-              node.selector.indexOf("/ ") === 0)
+            (node.selector.indexOf("\\") === 0 ||
+              node.selector.indexOf("\\ ") === 0)
           ) {
             const qblock = node;
             let prev = qblock;
@@ -52,17 +52,17 @@ module.exports = function (opts) {
 
           if (
             (node.type === "decl" || node.type === "comment") &&
-            ((node.value || node.text).indexOf(" / ") + 1 ||
-              (node.value || node.text).indexOf(" \\ m ") + 1)
+            ((node.value || node.text).indexOf(" \\") + 1 ||
+              (node.value || node.text).indexOf(" \\ ") + 1)
           ) {
             processIfValues(css, result, rule, node, queries);
           } else if (
             (node.type === "decl" || node.type === "comment") &&
-            (node.value || node.text).indexOf("/ ") + 1
+            (node.value || node.text).indexOf("\\ ") + 1
           ) {
             node.warn(
               result,
-              "Appears to be a malformed `*media` query -> " + node
+              "Appears to be a malformed `\` query -> " + node
             );
           }
         });
@@ -79,7 +79,7 @@ module.exports = function (opts) {
 module.exports.postcss = true;
 
 function processIfValues (css, result, rule, decl, queries) {
-  const re = /(.*)\s+(?:\/|\*)\s+(.*)/;
+  const re = /(.*)\s+(?:\\|\*)\s+(.*)/;
   const re2 = /\s/g;
   let hash = null;
   let val = null;
@@ -112,7 +112,7 @@ function processIfValues (css, result, rule, decl, queries) {
       decl: decl
     });
   } else {
-    decl.warn(result, "Appears to be a malformed `*media` query -> " + decl);
+    decl.warn(result, "Appears to be a malformed `\` query -> " + decl);
   }
 }
 
