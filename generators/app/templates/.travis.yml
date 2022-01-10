@@ -1,15 +1,15 @@
 sudo: false
 language: node_js
 node_js:
-  - "11"
-  - "12"
-  - "13"
-  - "14"
-  - "15"
+    - "11"
+    - "12"
+    - "13"
+    - "14"
+    - "15"
 services:
 cache:
-  directories:
-    - node_modules
+    directories:
+        - node_modules
 script:
-  - npm start
-  - npm run build
+    - npm start
+    - npm run build

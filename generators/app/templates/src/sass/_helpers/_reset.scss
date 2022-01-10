@@ -58,43 +58,43 @@ mark,
 audio,
 video,
 button {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
 
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
 }
 
 sub,
 sup {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	background: transparent;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
+    box-sizing: border-box;
 
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
 }
 
 a {
 
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
 }
 
 table,
@@ -105,12 +105,12 @@ thead,
 tr,
 th,
 td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: transparent;
 }
 
 article,
@@ -124,101 +124,101 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+    display: block;
 }
 
 ol,
 ul,
 li {
-	list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+    quotes: none;
 }
 
 blockquote {
 
-	&:before,
-	&:after {
-		content: none;
-	}
+    &:before,
+    &:after {
+        content: none;
+    }
 }
 
 q {
 
-	&:before,
-	&:after {
-		content: none;
-	}
+    &:before,
+    &:after {
+        content: none;
+    }
 }
 
 :focus {
-	outline: 0;
+    outline: 0;
 }
 
 input[type="text"],
 textarea {
-	-webkit-appearance: none;
+    -webkit-appearance: none;
 
-	&::-ms-clear {
-		display: none;
-	}
+    &::-ms-clear {
+        display: none;
+    }
 }
 
 input,
 textarea {
-	border-radius: 0;
-	box-sizing: border-box;
+    border-radius: 0;
+    box-sizing: border-box;
 
-	&::-webkit-input-placeholder {
-		color: $input_placeholder_color;
-	}
+    &::-webkit-input-placeholder {
+        color: $input_placeholder_color;
+    }
 
-	&::-moz-placeholder {
-		color: $input_placeholder_color;
-	}
+    &::-moz-placeholder {
+        color: $input_placeholder_color;
+    }
 
-	&:-ms-input-placeholder {
-		color: $input_placeholder_color;
-	}
+    &:-ms-input-placeholder {
+        color: $input_placeholder_color;
+    }
 
-	&:focus {
-		&::-webkit-input-placeholder {
-			color: transparent;
-		}
+    &:focus {
+        &::-webkit-input-placeholder {
+            color: transparent;
+        }
 
-		&::-moz-placeholder {
-			color: transparent;
-		}
+        &::-moz-placeholder {
+            color: transparent;
+        }
 
-		&:-ms-input-placeholder {
-			color: transparent;
-		}
-	}
+        &:-ms-input-placeholder {
+            color: transparent;
+        }
+    }
 }
 
 textarea {
-	resize: none;
+    resize: none;
 }
 
 ins {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 del {
-	text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 * {
-	box-sizing: border-box;
-	word-wrap: break-word;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 //-------------------------------------------------reset*/
