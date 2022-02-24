@@ -182,7 +182,7 @@ class CreaWSP extends Generator {
 
         // Copying to /src/
         this.fs.copy(this.templatePath('src/sass/**/*.{scss, sass}'), this.destinationPath('src/sass/'))
-        this.fs.copy(this.templatePath('src/templates/*.mustache'), this.destinationPath('src/templates/'))
+        // this.fs.copy(this.templatePath('src/templates/*.mustache'), this.destinationPath('src/templates/'))
         this.fs.copy(this.templatePath(`src/${this.choice.html}/**/*.${this.choice.html}`), this.destinationPath(`src/${this.choice.html}/`))
         this.fs.copy(this.templatePath(`src/${this.choice.js}/**/*.${this.choice.js}`), this.destinationPath(`src/${this.choice.js}/`))
 
@@ -203,13 +203,10 @@ class CreaWSP extends Generator {
         mkdir('markup/dist/img')
         mkdir('markup/dist/js')
         mkdir('markup/dist/fonts')
-        mkdir('markup/html')
 
-        mkdir('src/img')
-        mkdir('src/i/icons')
 
         if (this.choice.html === 'pug')
-            mkdir('src/pug/helpers/')
+            mkdir('src/pug/_helpers/')
     }
 
     // Installing dependecies
@@ -230,7 +227,7 @@ function initOptsJSON(props) {
         delete props.author_email
         delete props.author_homepage
     } else {
-        props.author = 'Creawave Studio'
+        props.author = 'Reforge.digital'
     }
 
     return props

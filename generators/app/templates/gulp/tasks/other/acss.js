@@ -6,12 +6,12 @@ module.exports = () => {
       .src($.config.paths.html.middle)
       .pipe(
         acss({
-          outfile: "atomic.css",
+          outfile: "atomic.scss",
           acssConfig: require("../../config/atomizer/conf.js"),
           addRules: require("../../config/atomizer/custom-rules.js"),
           cssOptions: {},
         })
       )
-      .pipe($.gulp.dest($.config.paths.styles.dist));
+      .pipe($.gulp.dest($.config.paths.styles.acss));
   });
 };

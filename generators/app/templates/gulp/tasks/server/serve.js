@@ -3,7 +3,7 @@ module.exports = () => {
     $.browserSync({
       server: {
         baseDir: "markup",
-        index: "html/index.html",
+        index: "index.html",
         // Tunnel: $.config.cfg.srv.tunel,
         tunnel: $.config.cfg.srv.addressTunel,
       },
@@ -11,7 +11,7 @@ module.exports = () => {
         port: $.config.cfg.srv.port2,
       },
       notify: true,
-      open: false,
+      open: true,
       port: $.config.cfg.srv.port2,
     });
 

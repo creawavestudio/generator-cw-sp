@@ -1,21 +1,21 @@
 {
    "cfg": {
       "srv": {
-         "port1": 3000,
-         "port2": 3001,
-         "tunel": "false",
-         "addressTunel": "gentle-ladybug-6"
+         "port1": 8080,
+         "port2": 8081,
+         "tunel": "false"
       }
    },
    "paths": {
       "html": {
          "src": "src/pug/**/!(_)*.pug",
          "watch": "src/pug/**/*.pug",
-         "middle": "markup/html/**/*.html",
-         "dist": "markup/html"
+         "middle": "markup/**/*.html",
+         "dist": "markup"
       },
       "styles": {
          "src": "src/sass/**/*.{scss, sass}",
+         "acss": "src/sass/_helpers/",
          "ignore": "!src/sass/_framework/**/*.scss",
          "middle": "markup/dist/css/**/*.css",
          "dist": "markup/dist/css/"
